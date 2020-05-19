@@ -2,5 +2,8 @@
   class="btn btn--{{type}}" 
   [ngClass]="{'loading-ring': isLoading }"
   (click)="onClick()">
-  <ng-content></ng-content>
+  <div></div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
 </button>
