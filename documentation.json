@@ -151,7 +151,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn{\r\n  text-align: center;\r\n  font-size: 16px;\r\n  letter-spacing: normal;\r\n  line-height: normal;\r\n  width: 100%;\r\n  padding: 12px 16px;\r\n  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;\r\n  background-color: #1FB5BE;\r\n  border-style: solid;\r\n  border-color: #1FB5BE;\r\n  cursor: pointer;\r\n  color: #fff;\r\n  border-radius: 3px;\r\n\r\n  &--secondary{\r\n    background-color: #fff;\r\n    color: #1FB5BE;\r\n    border-width: 2px;\r\n  }\r\n\r\n  &.loading-ring{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    pointer-events: none;\r\n    .content{\r\n      visibility: hidden;\r\n    }\r\n    div:not(.content){\r\n      box-sizing: border-box;\r\n      width: 25px;\r\n      height: 25px;\r\n      border: 2px solid rgb(255, 255, 255, .4);\r\n      border-top-color: #fff;\r\n      border-radius: 50%;\r\n      animation: 1s spin infinite ease-in-out;\r\n      position: absolute;\r\n    }\r\n  }\r\n}\r\n\r\n@keyframes spin {\r\n  to{\r\n    transform: rotate(360deg);\r\n  }\r\n}",
+                    "data": ".btn{\r\n  text-align: center;\r\n  font-size: 16px;\r\n  letter-spacing: normal;\r\n  line-height: normal;\r\n  width: 100%;\r\n  padding: 12px 16px;\r\n  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;\r\n  background-color: #1FB5BE;\r\n  border-style: solid;\r\n  border-color: #1FB5BE;\r\n  cursor: pointer;\r\n  color: #fff;\r\n  border-radius: 3px;\r\n\r\n  &--secondary{\r\n    background-color: #fff;\r\n    color: #1FB5BE;\r\n    border-width: 2px;\r\n  }\r\n\r\n  &.loading-ring{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    pointer-events: none;\r\n    .content{\r\n      visibility: hidden;\r\n    }\r\n    div:not(.content){\r\n      box-sizing: border-box;\r\n      width: 25px;\r\n      height: 25px;\r\n      border: 2px solid #1FB5BE;\r\n      border-top-color: #fff;\r\n      border-right-color: #fff;\r\n      border-radius: 50%;\r\n      animation: 1s spin infinite ease-in-out;\r\n      position: absolute;\r\n    }\r\n  }\r\n}\r\n\r\n@keyframes spin {\r\n  to{\r\n    transform: rotate(360deg);\r\n  }\r\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -213,6 +213,118 @@
                 "OnInit"
             ],
             "templateData": "<p>checkbox works!</p>\n"
+        },
+        {
+            "name": "ColorsComponent",
+            "id": "component-ColorsComponent-7810983aa65da59f9ad493250029f4c6",
+            "file": "src/app/styleguide/colors/colors.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-colors",
+            "styleUrls": [
+                "./colors.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./colors.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-colors',\n  templateUrl: './colors.component.html',\n  styleUrls: ['./colors.component.scss']\n})\nexport class ColorsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".color-box{\r\n    width: 200px;\r\n    height: 100px;\r\n}",
+                    "styleUrl": "./colors.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"flex\">\n  <div class=\"color-box\" data-theme='beko'>Beko</div>\n  <div class=\"color-box\" data-theme='hoover'>Hoover</div>\n  <div class=\"color-box\" data-theme='candy'>Candy</div>\n  <div class=\"color-box\" data-theme='hotpoint'>Hotpoint</div>\n</div>\n"
+        },
+        {
+            "name": "TypographyComponent",
+            "id": "component-TypographyComponent-f276ae4988259bdd3fbc2c865b4d956a",
+            "file": "src/app/styleguide/typography/typography.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-typography",
+            "styleUrls": [
+                "./typography.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./typography.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-typography',\n  templateUrl: './typography.component.html',\n  styleUrls: ['./typography.component.css']\n})\nexport class TypographyComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./typography.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1>Level 1 Heading</h1>\n<h2>Level 2 Heading</h2>"
         }
     ],
     "modules": [
@@ -234,6 +346,12 @@
                         },
                         {
                             "name": "CheckboxComponent"
+                        },
+                        {
+                            "name": "ColorsComponent"
+                        },
+                        {
+                            "name": "TypographyComponent"
                         }
                     ]
                 },
@@ -262,6 +380,14 @@
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "Colors",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/colors/colors.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ColorsComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-colors></app-colors>\r\n    </div>\r\n  `\r\n})"
+            },
             {
                 "name": "context",
                 "ctype": "miscellaneous",
@@ -316,12 +442,30 @@
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-button [type]=\"'secondary'\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
+            },
+            {
+                "name": "Typography",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/typography/typography.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: TypographyComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-typography></app-typography>\r\n    </div>\r\n  `\r\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/styleguide/colors/colors.stories.ts": [
+                {
+                    "name": "Colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/colors/colors.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ColorsComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-colors></app-colors>\r\n    </div>\r\n  `\r\n})"
+                }
+            ],
             "src/test.ts": [
                 {
                     "name": "context",
@@ -384,6 +528,16 @@
                     "type": "",
                     "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-button [type]=\"'secondary'\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
                 }
+            ],
+            "src/app/styleguide/typography/typography.stories.ts": [
+                {
+                    "name": "Typography",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/typography/typography.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: TypographyComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-typography></app-typography>\r\n    </div>\r\n  `\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -392,7 +546,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 7,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -459,6 +613,44 @@
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/colors/colors.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColorsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/colors/colors.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Colors",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/typography.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TypographyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Typography",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

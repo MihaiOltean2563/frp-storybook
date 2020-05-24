@@ -1,0 +1,57 @@
+:root{
+    // main
+    // color contrasts
+    @include defineColorHSL(--color-contrast-lower, 0, 0%, 100%);
+    @include defineColorHSL(--color-contrast-low, 240, 1%, 83%);
+    @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
+    @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
+    @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
+  }
+
+  
+  [data-theme] {
+    background-color: var(--color-bg);
+    color: var(--color-contrast-lower);
+  }
+
+  [data-theme="beko"] {
+    //brand color
+    @include defineColorHSL(--color-primary, 199, 100%, 37%);
+    @include defineColorHSL(--color-bg, 199, 100%, 37%);
+    // color contrasts
+    @include defineColorHSL(--color-primary-darker, 199, 100%, 41%);
+    @include defineColorHSL(--color-primary-dark, 199, 100%, 51%);
+    @include defineColorHSL(--color-primary-light, 199, 100%, 71%);
+    @include defineColorHSL(--color-primary-lighter, 199, 100%, 81%);
+  }
+
+  [data-theme="hoover"] {
+    //brand color
+    @include defineColorHSL(--color-primary, 349, 100%, 43%);
+    @include defineColorHSL(--color-bg, 349, 96%, 44%);
+    // color contrasts
+    @include defineColorHSL(--color-primary-darker, 349, 100%, 41%);
+    @include defineColorHSL(--color-primary-dark, 349, 100%, 51%);
+    @include defineColorHSL(--color-primary-light, 349, 100%, 71%);
+    @include defineColorHSL(--color-primary-lighter, 349, 100%, 81%);
+  }
+  [data-theme="candy"] {
+    //brand color
+    @include defineColorHSL(--color-primary, 195, 100%, 45%);
+    @include defineColorHSL(--color-bg, 195, 100%, 45%);
+    // color contrasts
+    @include defineColorHSL(--color-primary-darker, 195, 100%, 41%);
+    @include defineColorHSL(--color-primary-dark, 195, 100%, 51%);
+    @include defineColorHSL(--color-primary-light, 195, 100%, 71%);
+    @include defineColorHSL(--color-primary-lighter, 195, 100%, 81%);
+  }
+  [data-theme="hotpoint"] {
+    //brand color
+    @include defineColorHSL(--color-primary, 183, 72%, 43%);
+    @include defineColorHSL(--color-bg, 183, 72%, 43%);
+    // color contrasts
+    @include defineColorHSL(--color-primary-darker, 183, 72%, 41%);
+    @include defineColorHSL(--color-primary-dark, 183, 72%, 51%);
+    @include defineColorHSL(--color-primary-light, 183, 72%, 71%);
+    @include defineColorHSL(--color-primary-lighter, 183, 72%, 81%);
+  }

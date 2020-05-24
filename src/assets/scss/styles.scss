@@ -1,1 +1,15 @@
-@import 'base/variables';
+@import 'global/mixins';
+@import 'global/normalize';
+@import 'global/accessibility';
+@import 'global/colors';
+@import 'global/breakpoints';
+@import 'global/typography';
+@import 'global/grid-layout';
+@import 'global/alignment';
+@import 'global/buttons';
+@import 'global/spacing';
+@import 'global/visibility';
+@import 'global/z-index';
+@import 'global/forms';
+@import 'global/icons';
+
