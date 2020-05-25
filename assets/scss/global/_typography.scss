@@ -1,0 +1,202 @@
+/*
+Set the typescale using css variables
+It gives you the possibility to control the whole typography system by editing only two variables:
+the --text-base-size (body font size) and the --text-scale-ratio (the scale multiplier).
+*/
+:root {
+  // font family
+  --font-primary: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+
+  // body font size
+  --text-base-size: 1em;
+  
+  // type scale
+  --text-scale-ratio: 1.2;
+  --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+
+  // line-height
+  --body-line-height: 1.4;
+  --heading-line-height: 1.2;
+
+  // capital letters - used in combo with the lhCrop mixin
+  --font-primary-capital-letter: 1;
+
+  //Border opacity variables
+  @include borderOpacity(var(--color-primary), 70);
+
+}
+
+@supports(--css: variables) {
+  :root {
+    @include breakpoint(md) {
+      --text-base-size: 1.25em;
+      --text-scale-ratio: 1.25;
+    }
+  }
+}
+
+body {
+  font-size: var(--text-base-size);
+  color: var(--color-contrast-high);
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-contrast-higher);
+  line-height: var(--heading-line-height);
+  font-family: var(--font-primary);
+  font-weight: 700;
+}
+
+// text size
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1, .text--xxl {
+  font-size: var(--text-xxl);
+}
+
+h2, .text--xl {
+  font-size: var(--text-xl);
+}
+
+h3, .text--lg {
+  font-size: var(--text-lg);
+}
+
+h4, .text--md {
+  font-size: var(--text-md);
+}
+
+.text--sm, small {
+  font-size: var(--text-sm);
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+}
+
+// inline text
+a, .link {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+
+strong {
+  font-weight: bold;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+u {
+  text-decoration: underline;
+}
+
+.text--subtle, .text-component .text--subtle {
+  color: var(--color-contrast-medium);
+}
+
+.text--inherit, .text-component .text--inherit {
+  color: inherit;
+}
+
+.text-component {
+  --component-body-line-height: calc(var(--body-line-height) * var(--line-height-multiplier, 1));
+  --component-heading-line-height: calc(var(--heading-line-height) * var(--line-height-multiplier, 1));
+  --line-height-multiplier: 1;
+  --text-vspace-multiplier: 1;
+
+  h1, h2, h3, h4 {
+    line-height: var(--component-heading-line-height);
+    margin-bottom: calc(var(--space-xxxs) * var(--text-vspace-multiplier));
+  }
+
+  h2, h3, h4 {
+    margin-top: calc(var(--space-sm) * var(--text-vspace-multiplier));
+  }
+
+  p, blockquote, ul li, ol li {
+    line-height: var(--component-body-line-height);
+    color: var(--color-contrast-high);
+  }
+  
+  ul, ol, p, blockquote {
+    margin-bottom: calc(var(--space-sm) * var(--text-vspace-multiplier));
+  }
+
+  ul, ol {
+    padding-left: 1em;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+  
+  em {
+    font-style: italic;
+  }
+
+  blockquote {
+    padding-left: 1em;
+    border-left: 4px solid var(--color-contrast-low);
+  }
+
+  hr {
+    background: var(--color-contrast-low);
+    height: 1px;
+    margin: calc(var(--space-lg) * var(--text-vspace-multiplier)) auto;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// utility classes
+.truncate {
+  // truncate text if it exceeds its parent
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text--center {
+  text-align: center;
+}
+
+//Text measures
+.measure-wide {   max-width: 34em; }
+.measure {        max-width: 30em; }
+.measure-narrow { max-width: 20em; }
+
+//Borders
+.ba { border-style: solid; border-width: 1px; border-color: var(--color-contrast-high)}
+.bt { border-top-style: solid; border-top-width: 1px; border-color: var(--color-contrast-high)}
+.br { border-right-style: solid; border-right-width: 1px; border-color: var(--color-contrast-high)}
+.bb { border-bottom-style: solid; border-bottom-width: 1px; border-color: var(--color-contrast-high)}
+.bl { border-left-style: solid; border-left-width: 1px; border-color: var(--color-contrast-high)}
+.bn { border-style: none; border-width: 0; }
+
+.ba-opa70{
+  border-style: solid;
+  border-width: 1px;
+  @include borderOpacity(var(--color-primary), 70);
+}
