@@ -15,11 +15,14 @@
 }
 
 // optional - edit space unit and padding of all components at a specific breakpoint
+/* Important: we wrap the variable update at the md (medium) breakpoint into a @supports(--css: variables) rule to prevent 
+the postcss-css-variables plugin from generating a fallback (Which, in this case, would result in a lot of extra code).*/
 @supports(--css: variables) {
   :root {
     @include breakpoint(md) {
       --space-unit:  1.25em;
     }
+    // TODO - add breakpoints for xs, sm, lg, xl --space-unit for resposiveness
   }
 }
 

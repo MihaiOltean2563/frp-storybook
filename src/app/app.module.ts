@@ -5,7 +5,13 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ColorsComponent } from './styleguide/colors/colors.component';
-import { TypographyComponent } from './styleguide/typography/typography.component';
+import { BordersComponent } from './styleguide/typography/borders/borders.component';
+import { HeadingsComponent } from './styleguide/typography/headings/headings.component';
+import { ContainerComponent } from './styleguide/layout/container/container.component';
+import { GridComponent } from './styleguide/layout/grid/grid.component';
+import { IconsComponent } from './styleguide/icons/icons.component';
+import { MeasureComponent } from './styleguide/typography/measure/measure.component';
+import { FontSizesComponent } from './styleguide/typography/font-sizes/font-sizes.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +19,13 @@ import { TypographyComponent } from './styleguide/typography/typography.componen
     ButtonComponent,
     CheckboxComponent,
     ColorsComponent,
-    TypographyComponent
+    BordersComponent,
+    HeadingsComponent,
+    ContainerComponent,
+    GridComponent,
+    IconsComponent,
+    MeasureComponent,
+    FontSizesComponent
   ],
   imports: [
     BrowserModule
