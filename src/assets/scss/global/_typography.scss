@@ -26,6 +26,10 @@ the --text-base-size (body font size) and the --text-scale-ratio (the scale mult
 
   // capital letters - used in combo with the lhCrop mixin
   --font-primary-capital-letter: 1;
+
+  //Border opacity variables
+  @include borderOpacity(var(--color-primary), 70);
+
 }
 
 @supports(--css: variables) {
@@ -184,9 +188,15 @@ u {
 .measure-narrow { max-width: 20em; }
 
 //Borders
-.ba { border-style: solid; border-width: 1px; border-color: var(--color-contrast-low)}
-.bt { border-top-style: solid; border-top-width: 1px; border-color: var(--color-contrast-low)}
-.br { border-right-style: solid; border-right-width: 1px; border-color: var(--color-contrast-low)}
-.bb { border-bottom-style: solid; border-bottom-width: 1px; border-color: var(--color-contrast-low)}
-.bl { border-left-style: solid; border-left-width: 1px; border-color: var(--color-contrast-low)}
+.ba { border-style: solid; border-width: 1px; border-color: var(--color-contrast-high)}
+.bt { border-top-style: solid; border-top-width: 1px; border-color: var(--color-contrast-high)}
+.br { border-right-style: solid; border-right-width: 1px; border-color: var(--color-contrast-high)}
+.bb { border-bottom-style: solid; border-bottom-width: 1px; border-color: var(--color-contrast-high)}
+.bl { border-left-style: solid; border-left-width: 1px; border-color: var(--color-contrast-high)}
 .bn { border-style: none; border-width: 0; }
+
+.ba-opa70{
+  border-style: solid;
+  border-width: 1px;
+  @include borderOpacity(var(--color-primary), 70);
+}

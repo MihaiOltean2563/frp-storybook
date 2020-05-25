@@ -56,6 +56,24 @@
     #{$color}-s: #{$saturation};
     #{$color}-l: #{$lightness};
   }
+
+// Opacity should be on a 100 point scale (0-100 instead of 0.0-1.0)
+// This should be used to supplement a normal border definition as it
+// only deals with the 'border-color' property.
+@mixin borderOpacity($color, $opacity) {
+	$opacity: $opacity / 100;
+
+	// Unsupporting browsers get this
+	border-color: $color;
+
+	// Browsers that support RGBA will get this instead
+	border-color: rgba($color, $opacity);
+
+	// Prevent the element's background from reaching the edge of the border
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+}
   
   // return color with different opacity value
   @function alpha($color, $opacity){
