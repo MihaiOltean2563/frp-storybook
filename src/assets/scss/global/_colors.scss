@@ -10,12 +10,13 @@
 
   
   [data-theme] {
-    background-color: var(--color-bg);
     color: var(--color-contrast-lower);
   }
 
   [data-theme="beko"] {
     //brand color
+    /* Hex - #0083BE */
+    --color-primary-hex: #0083BE;
     @include defineColorHSL(--color-primary, 199, 100%, 37%);
     @include defineColorHSL(--color-bg, 199, 100%, 37%);
     // color contrasts
@@ -27,6 +28,8 @@
 
   [data-theme="hoover"] {
     //brand color
+    /* Hex - #DD052b */
+    --color-primary-hex: #DD052b;
     @include defineColorHSL(--color-primary, 349, 100%, 43%);
     @include defineColorHSL(--color-bg, 349, 96%, 44%);
     // color contrasts
@@ -36,7 +39,10 @@
     @include defineColorHSL(--color-primary-lighter, 349, 100%, 81%);
   }
   [data-theme="candy"] {
+    
     //brand color
+    /* Hex - #00AEE6 */
+    --color-primary-hex:#00AEE6;
     @include defineColorHSL(--color-primary, 195, 100%, 45%);
     @include defineColorHSL(--color-bg, 195, 100%, 45%);
     // color contrasts
@@ -47,6 +53,8 @@
   }
   [data-theme="hotpoint"] {
     //brand color
+     /* Hex - #1FB5BE */
+     --color-primary-hex: #1FB5BE;
     @include defineColorHSL(--color-primary, 183, 72%, 43%);
     @include defineColorHSL(--color-bg, 183, 72%, 43%);
     // color contrasts
