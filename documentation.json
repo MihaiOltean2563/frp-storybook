@@ -85,6 +85,62 @@
             "templateData": "<span>{{ title }} app is running!</span>\n"
         },
         {
+            "name": "BordersComponent",
+            "id": "component-BordersComponent-7dee8d3342d4e0f8643e1eacbcfbe98f",
+            "file": "src/app/styleguide/typography/borders/borders.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-borders",
+            "styleUrls": [
+                "./borders.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./borders.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-borders',\n  templateUrl: './borders.component.html',\n  styleUrls: ['./borders.component.scss']\n})\nexport class BordersComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".border-demo-box{\r\n\twidth: 200px;\r\n\theight: 50px;\r\n\tbackground: var(--color-contrast-low);\r\n\tborder-color: var(--color-contrast-higher);\r\n}",
+                    "styleUrl": "./borders.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"border-demo-box ba margin-bottom--sm\">ba = border all</div>\n<div class=\"border-demo-box bt margin-bottom--sm\">bt = border top</div>\n<div class=\"border-demo-box br margin-bottom--sm\">br = border right</div>\n<div class=\"border-demo-box bb margin-bottom--sm\">bb = border bottom</div>\n<div class=\"border-demo-box bl margin-bottom--sm\">bl = border left</div>  \n<!-- Opacity Borders -->\n<!-- <div class=\"border-demo-box ba-opa70\">ba-opa70 = border all opacity 70</div> -->"
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-7d0333ff3f585b8690c16f3bf481dfe8",
             "file": "src/app/components/button/button.component.ts",
@@ -271,21 +327,21 @@
             "templateData": "<div class=\"flex flex--center-y bb\" data-theme='beko'>\n  <div class=\"color-box text--center\">Beko</div>\n  <div class=\"typography-box\">Aa</div>\n  <div class=\"color-variable\">--color-primary: #0083BE</div>\n</div>\n<div class=\"flex flex--center-y bb\" data-theme='hoover'>\n  <div class=\"color-box text--center\">Hoover</div>\n  <div class=\"typography-box\">Aa</div>\n  <div class=\"color-variable\">--color-primary: #DD052b</div>\n</div>\n<div class=\"flex flex--center-y bb\" data-theme='candy'>\n  <div class=\"color-box text--center\">Candy</div>\n  <div class=\"typography-box\">Aa</div>\n  <div class=\"color-variable\">--color-primary: #00AEE6</div>\n</div>\n<div class=\"flex flex--center-y bb\" data-theme='hotpoint'>\n  <div class=\"color-box text--center\">Hotpoint</div>\n  <div class=\"typography-box\">Aa</div>\n  <div class=\"color-variable\">--color-primary: #1FB5BE</div>\n</div>\n"
         },
         {
-            "name": "TypographyComponent",
-            "id": "component-TypographyComponent-71bbce9ed32e2158a91db1452e42c91a",
-            "file": "src/app/styleguide/typography/typography.component.ts",
+            "name": "ContainerComponent",
+            "id": "component-ContainerComponent-9e4d02c5df9267187315e0c21c533b67",
+            "file": "src/app/styleguide/layout/container/container.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-typography",
+            "selector": "app-container",
             "styleUrls": [
-                "./typography.component.scss"
+                "./container.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./typography.component.html"
+                "./container.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [],
@@ -306,12 +362,12 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-typography',\n  templateUrl: './typography.component.html',\n  styleUrls: ['./typography.component.scss']\n})\nexport class TypographyComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-container',\n  templateUrl: './container.component.html',\n  styleUrls: ['./container.component.scss']\n})\nexport class ContainerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".border-demo-box{\r\n    width: 200px;\r\n    height: 50px;\r\n    background: var(--color-contrast-low);\r\n    border-color: var(--color-contrast-higher);\r\n}",
-                    "styleUrl": "./typography.component.scss"
+                    "data": ".component{\r\n    background: var(--color-contrast-medium);\r\n    color: var(--color-contrast-lower);\r\n    padding: var(--component-padding)\r\n}",
+                    "styleUrl": "./container.component.scss"
                 }
             ],
             "stylesData": "",
@@ -324,7 +380,287 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- Headings -->\n<h1>Level 1 Heading</h1>\n<h2>Level 2 Heading</h2>\n<h3>Level 3 Heading</h3>\n<h4>Level 4 Heading</h4>\n<h5>Level 5 Heading</h5>\n<h6>Level 6 Heading</h6>\n\n<!-- Borders -->\n<div class=\"border-demo-box ba margin-bottom--sm\">ba = border all</div>\n<div class=\"border-demo-box bt margin-bottom--sm\">bt = border top</div>\n<div class=\"border-demo-box br margin-bottom--sm\">br = border right</div>\n<div class=\"border-demo-box bb margin-bottom--sm\">bb = border bottom</div>\n<div class=\"border-demo-box bl margin-bottom--sm\">bl = border left</div>\n\n"
+            "templateData": "<div class=\"container max-width-adaptive component\">\n    Container test here\n</div>\n"
+        },
+        {
+            "name": "FontSizesComponent",
+            "id": "component-FontSizesComponent-2418d98e63d93587fe63445574a5c248",
+            "file": "src/app/styleguide/typography/font-sizes/font-sizes.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-font-sizes",
+            "styleUrls": [
+                "./font-sizes.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./font-sizes.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-font-sizes',\n  templateUrl: './font-sizes.component.html',\n  styleUrls: ['./font-sizes.component.css']\n})\nexport class FontSizesComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./font-sizes.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>font-sizes works!</p>\n"
+        },
+        {
+            "name": "GridComponent",
+            "id": "component-GridComponent-041c6a7b2e2119b56f09743bc7708ea4",
+            "file": "src/app/styleguide/layout/grid/grid.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-grid",
+            "styleUrls": [
+                "./grid.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./grid.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-grid',\n  templateUrl: './grid.component.html',\n  styleUrls: ['./grid.component.scss']\n})\nexport class GridComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".child{\r\n    background: var(--color-primary);\r\n}",
+                    "styleUrl": "./grid.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container container--adaptive-lg ba\">\n\n  <div class=\"grid\" data-theme='beko'>\n    <div class=\"child col--6 col--sm-4\">1</div>\n    <div class=\"child col--6 col--sm-4\">2</div>\n    <div class=\"child col--12 col--sm-4\">3</div>\n  </div>\n  \n</div>  "
+        },
+        {
+            "name": "HeadingsComponent",
+            "id": "component-HeadingsComponent-3f39a4ed391c03aae8d310356f2bb21b",
+            "file": "src/app/styleguide/typography/headings/headings.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-headings",
+            "styleUrls": [
+                "./headings.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./headings.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-headings',\n  templateUrl: './headings.component.html',\n  styleUrls: ['./headings.component.css']\n})\nexport class HeadingsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./headings.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>headings works!</p>\n"
+        },
+        {
+            "name": "IconsComponent",
+            "id": "component-IconsComponent-ecca0886525fbe8a8b4f1676699723a7",
+            "file": "src/app/styleguide/icons/icons.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icons",
+            "styleUrls": [
+                "./icons.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./icons.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-icons',\n  templateUrl: './icons.component.html',\n  styleUrls: ['./icons.component.scss']\n})\nexport class IconsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./icons.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>icons works!</p>\n"
+        },
+        {
+            "name": "MeasureComponent",
+            "id": "component-MeasureComponent-6acfb7a51b99503b77ec76a161f2f10a",
+            "file": "src/app/styleguide/typography/measure/measure.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-measure",
+            "styleUrls": [
+                "./measure.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./measure.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-measure',\n  templateUrl: './measure.component.html',\n  styleUrls: ['./measure.component.css']\n})\nexport class MeasureComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./measure.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>measure works!</p>\n"
         }
     ],
     "modules": [
@@ -342,6 +678,9 @@
                             "name": "AppComponent"
                         },
                         {
+                            "name": "BordersComponent"
+                        },
+                        {
                             "name": "ButtonComponent"
                         },
                         {
@@ -351,7 +690,22 @@
                             "name": "ColorsComponent"
                         },
                         {
-                            "name": "TypographyComponent"
+                            "name": "ContainerComponent"
+                        },
+                        {
+                            "name": "FontSizesComponent"
+                        },
+                        {
+                            "name": "GridComponent"
+                        },
+                        {
+                            "name": "HeadingsComponent"
+                        },
+                        {
+                            "name": "IconsComponent"
+                        },
+                        {
+                            "name": "MeasureComponent"
                         }
                     ]
                 },
@@ -381,12 +735,28 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Borders",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/typography/borders/borders.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: BordersComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n        <app-borders></app-borders>\r\n    </div>\r\n  `\r\n})"
+            },
+            {
                 "name": "Colors",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/styleguide/colors/colors.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: ColorsComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-colors></app-colors>\r\n    </div>\r\n  `\r\n})"
+            },
+            {
+                "name": "Containers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/layout/container/container.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: ContainerComponent,\r\n  template: `\r\n    <app-container></app-container> \r\n  `\r\n})"
             },
             {
                 "name": "context",
@@ -411,6 +781,38 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "FontSizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/typography/font-sizes/font-sizes.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: FontSizesComponent,\r\n  template: `\r\n  <div class=\"text--xs\">--text-xs</div>  \r\n  <div class=\"text--sm\">--text-sm</div>  \r\n  <div class=\"text--md\">--text-md</div>  \r\n  <div class=\"text--lg\">--text-lg</div>  \r\n  <div class=\"text--xl\">--text-xl</div>  \r\n  `\r\n})"
+            },
+            {
+                "name": "Grids",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/layout/grid/grid.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: GridComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-grid></app-grid>\r\n    </div>\r\n  `\r\n})"
+            },
+            {
+                "name": "Headings",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/typography/headings/headings.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: HeadingsComponent,\r\n  template: `\r\n  <h1>Level 1 Heading</h1>\r\n  <h2>Level 2 Heading</h2>\r\n  <h3>Level 3 Heading</h3>\r\n  <h4>Level 4 Heading</h4>\r\n  <h5>Level 5 Heading</h5>\r\n  <h6>Level 6 Heading</h6>  \r\n  `\r\n})"
+            },
+            {
+                "name": "Icons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/styleguide/icons/icons.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: IconsComponent,\r\n  template: `\r\n  <div class=\"icon\">Icon test here</div>  \r\n  `\r\n})"
             },
             {
                 "name": "Loading",
@@ -444,18 +846,28 @@
                 "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-button [type]=\"'secondary'\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
             },
             {
-                "name": "Typography",
+                "name": "TextMeasures",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/styleguide/typography/typography.stories.ts",
+                "file": "src/app/styleguide/typography/measure/measure.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: TypographyComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-typography></app-typography>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: MeasureComponent,\r\n  template: `\r\n    <div class=\"measure-wide text-component margin-bottom\">\r\n      <h5>Wide measure</h5>\r\n      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>\r\n    </div>  \r\n    <div class=\"measure text-component margin-bottom\">\r\n      <h5>Normal measure</h5>\r\n      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>\r\n    </div>  \r\n    <div class=\"measure-narrow text-component margin-bottom\">\r\n      <h5>Narrow measure</h5>\r\n      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>\r\n    </div>  \r\n  `\r\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/styleguide/typography/borders/borders.stories.ts": [
+                {
+                    "name": "Borders",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/typography/borders/borders.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: BordersComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n        <app-borders></app-borders>\r\n    </div>\r\n  `\r\n})"
+                }
+            ],
             "src/app/styleguide/colors/colors.stories.ts": [
                 {
                     "name": "Colors",
@@ -464,6 +876,16 @@
                     "file": "src/app/styleguide/colors/colors.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n  component: ColorsComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-colors></app-colors>\r\n    </div>\r\n  `\r\n})"
+                }
+            ],
+            "src/app/styleguide/layout/container/container.stories.ts": [
+                {
+                    "name": "Containers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/layout/container/container.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ContainerComponent,\r\n  template: `\r\n    <app-container></app-container> \r\n  `\r\n})"
                 }
             ],
             "src/test.ts": [
@@ -503,6 +925,46 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
+            "src/app/styleguide/typography/font-sizes/font-sizes.stories.ts": [
+                {
+                    "name": "FontSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/typography/font-sizes/font-sizes.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: FontSizesComponent,\r\n  template: `\r\n  <div class=\"text--xs\">--text-xs</div>  \r\n  <div class=\"text--sm\">--text-sm</div>  \r\n  <div class=\"text--md\">--text-md</div>  \r\n  <div class=\"text--lg\">--text-lg</div>  \r\n  <div class=\"text--xl\">--text-xl</div>  \r\n  `\r\n})"
+                }
+            ],
+            "src/app/styleguide/layout/grid/grid.stories.ts": [
+                {
+                    "name": "Grids",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/layout/grid/grid.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: GridComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-grid></app-grid>\r\n    </div>\r\n  `\r\n})"
+                }
+            ],
+            "src/app/styleguide/typography/headings/headings.stories.ts": [
+                {
+                    "name": "Headings",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/typography/headings/headings.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: HeadingsComponent,\r\n  template: `\r\n  <h1>Level 1 Heading</h1>\r\n  <h2>Level 2 Heading</h2>\r\n  <h3>Level 3 Heading</h3>\r\n  <h4>Level 4 Heading</h4>\r\n  <h5>Level 5 Heading</h5>\r\n  <h6>Level 6 Heading</h6>  \r\n  `\r\n})"
+                }
+            ],
+            "src/app/styleguide/icons/icons.stories.ts": [
+                {
+                    "name": "Icons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/styleguide/icons/icons.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: IconsComponent,\r\n  template: `\r\n  <div class=\"icon\">Icon test here</div>  \r\n  `\r\n})"
+                }
+            ],
             "src/app/components/button/button.stories.ts": [
                 {
                     "name": "Loading",
@@ -529,14 +991,14 @@
                     "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-button [type]=\"'secondary'\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
                 }
             ],
-            "src/app/styleguide/typography/typography.stories.ts": [
+            "src/app/styleguide/typography/measure/measure.stories.ts": [
                 {
-                    "name": "Typography",
+                    "name": "TextMeasures",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/styleguide/typography/typography.stories.ts",
+                    "file": "src/app/styleguide/typography/measure/measure.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: TypographyComponent,\r\n  template: `\r\n    <div class=\"color\">\r\n      <app-typography></app-typography>\r\n    </div>\r\n  `\r\n})"
+                    "defaultValue": "() => ({\r\n  component: MeasureComponent,\r\n  template: `\r\n    <div class=\"measure-wide text-component margin-bottom\">\r\n      <h5>Wide measure</h5>\r\n      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>\r\n    </div>  \r\n    <div class=\"measure text-component margin-bottom\">\r\n      <h5>Normal measure</h5>\r\n      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>\r\n    </div>  \r\n    <div class=\"measure-narrow text-component margin-bottom\">\r\n      <h5>Narrow measure</h5>\r\n      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>\r\n    </div>  \r\n  `\r\n})"
                 }
             ]
         },
@@ -546,7 +1008,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -635,20 +1097,134 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/styleguide/typography/typography.component.ts",
+                "filePath": "src/app/styleguide/icons/icons.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TypographyComponent",
+                "name": "IconsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "src/app/styleguide/typography/typography.stories.ts",
+                "filePath": "src/app/styleguide/icons/icons.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Typography",
+                "name": "Icons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/layout/container/container.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContainerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/layout/container/container.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Containers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/layout/grid/grid.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GridComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/layout/grid/grid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Grids",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/borders/borders.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BordersComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/borders/borders.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Borders",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/font-sizes/font-sizes.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FontSizesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/font-sizes/font-sizes.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FontSizes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/headings/headings.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeadingsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/headings/headings.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Headings",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/measure/measure.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MeasureComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/styleguide/typography/measure/measure.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextMeasures",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

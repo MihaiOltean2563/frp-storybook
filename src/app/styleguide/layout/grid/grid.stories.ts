@@ -23,12 +23,8 @@ export default {
 export const Grids = () => ({
   component: GridComponent,
   template: `
-  <div class="container container--adaptive-lg ba">
-    <div class="grid">
-      <div class="col ba">1</div>
-      <div class="col ba">2</div>
-      <div class="col ba">3</div>
+    <div class="story">
+      <app-grid></app-grid>
     </div>
-  </div>  
   `
 });

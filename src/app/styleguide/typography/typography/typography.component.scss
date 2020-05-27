@@ -1,0 +1,5 @@
+.typography{
+  p{
+    line-height: calc(var(--body-line-height) * var(--line-height-multiplier, 1));
+  }
+}
