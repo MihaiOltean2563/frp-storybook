@@ -32,6 +32,27 @@
   &:active {
     transform: translateY(2px);
   }
+
+  &.loading-ring{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    .content{
+      visibility: hidden;
+    }
+    div:not(.content){
+      box-sizing: border-box;
+      width: 25px;
+      height: 25px;
+      border: 2px solid #1FB5BE;
+      border-top-color: #fff;
+      border-right-color: #fff;
+      border-radius: 50%;
+      animation: 1s spin infinite ease-in-out;
+      position: absolute;
+    }
+  }
 }
 
 // themes
@@ -77,6 +98,11 @@
 .btn--md {}
 .btn--lg {}
 
+@keyframes spin {
+  to{
+    transform: rotate(360deg);
+  }
+}
 // --------------------------------
 
 // (END) Global Editor Code

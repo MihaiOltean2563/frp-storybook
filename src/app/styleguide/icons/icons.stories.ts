@@ -7,9 +7,9 @@ export default {
   component: IconsComponent,
   parameters: {
     componentSubtitle: 
-      'A collection of icons for FRP',
+      'A collection of icons generated with Icomoon',
     docs: {
-      iframeHeight: 100
+      iframeHeight: 200
     }
   },
   decorators: [
@@ -23,6 +23,6 @@ export default {
 export const Icons = () => ({
   component: IconsComponent,
   template: `
-  <div class="icon">Icon test here</div>  
+    <app-icons></app-icons>  
   `
 });

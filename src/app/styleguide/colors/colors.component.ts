@@ -9,7 +9,11 @@ export class ColorsComponent implements OnInit {
 
   constructor() { }
 
+  /**
+    Initializing all colors
+  **/
   ngOnInit(): void {
   }
 
+  
 }

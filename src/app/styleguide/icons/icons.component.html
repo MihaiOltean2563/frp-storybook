@@ -1,1 +1,8 @@
-<p>icons works!</p>
+<div class="container max-width-xl padding-y-md">
+  <div class="grid">
+    <div class="col col-2@md grid" *ngFor="let type of appIcons">
+        <div class="icon icon-{{type}} col col-2 icon--lg"></div>
+        <div class="text-xs padding-y-sm">.icon-{{type}}</div>
+    </div>
+  </div>
+</div>

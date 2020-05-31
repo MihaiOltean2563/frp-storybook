@@ -7,10 +7,13 @@ export default {
   component: ColorsComponent,
   parameters: {
     componentSubtitle: 
-      'The collection of FRP colors',
+      `These are the "Brand" colors, mostly used for interactive elements (e.g., buttons). 
+      Each color in this section has 5 color variations (base color + 2 lighter versions + 2 darker versions).
+      Each color is defined using the defineColorHSL mixin.`,
     docs: {
-      iframeHeight: 100
-    }
+      iframeHeight: 400
+    },
+    notes: 'TODO - Please add toggle functionality for each of these color rows to shrink/expand to a 50px - 100px divs'
   },
   decorators: [
     moduleMetadata({
@@ -19,6 +22,7 @@ export default {
     })
   ]
 };
+
 
 export const Colors = () => ({
   component: ColorsComponent,
