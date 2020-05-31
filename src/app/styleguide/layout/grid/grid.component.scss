@@ -1,3 +1,7 @@
 .child{
     background: var(--color-primary);
 }
+.parent > * {
+	background-color: var(--color-primary);
+	height: 60px;
+}

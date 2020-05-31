@@ -1,11 +1,8 @@
-.color-box{
-  width: 200px;
+.square{
+  // width: 200px;
   height: 100px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-color: var(--color-bg);
 }
+
 .typography-box{
   padding: var(--component-padding);
   color: var(--color-primary);
