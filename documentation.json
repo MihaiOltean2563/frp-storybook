@@ -455,7 +455,7 @@
         },
         {
             "name": "IconsComponent",
-            "id": "component-IconsComponent-05644e981dd8e1c0a90636b9e889d12f",
+            "id": "component-IconsComponent-58d8b01f074107f298f10228a2f0429c",
             "file": "src/app/styleguide/icons/icons.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -474,7 +474,7 @@
             "inputsClass": [
                 {
                     "name": "type",
-                    "description": "<p>*\nSpecify the variant of the button </p>\n",
+                    "description": "<p>*\nSpecify the corresponding class</p>\n",
                     "line": 38,
                     "type": "string"
                 }
@@ -508,7 +508,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-icons',\n  templateUrl: './icons.component.html',\n  styleUrls: ['./icons.component.scss']\n})\nexport class IconsComponent implements OnInit {\n\n  constructor() { }\n  /**\n * Classes for all icons\n */\n  private appIcons = [\n    'cooker',\n    'dishwasher',\n    'fridge-freezer',\n    'other-appliances',\n    'tumble-dryer',\n    'washing-machine',\n    'tip',\n    'brochure',\n    'settings',\n    'cross',\n    'tick',\n    'breakdown',\n    'delivery',\n    'repair-engineer',\n    'savings',\n    'accidental-damage',\n    'arrow-down'\n  ];\n  ngOnInit(): void {\n  }\n  /***\n   *  Specify the variant of the button \n  * */\n  @Input() type: string;\n\n\n}\n",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-icons',\n  templateUrl: './icons.component.html',\n  styleUrls: ['./icons.component.scss']\n})\nexport class IconsComponent implements OnInit {\n\n  constructor() { }\n  /**\n * Classes for all icons\n */\n  private appIcons = [\n    'cooker',\n    'dishwasher',\n    'fridge-freezer',\n    'other-appliances',\n    'tumble-dryer',\n    'washing-machine',\n    'tip',\n    'brochure',\n    'settings',\n    'cross',\n    'tick',\n    'breakdown',\n    'delivery',\n    'repair-engineer',\n    'savings',\n    'accidental-damage',\n    'arrow-down'\n  ];\n  ngOnInit(): void {\n  }\n  /***\n   *  Specify the corresponding class\n  * */\n  @Input() type: string;\n\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -526,7 +526,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container max-width-xl padding-y-md\">\n  <div class=\"grid\">\n    <div *ngFor=\"let type of appIcons\" class=\"col icon-{{type}} icon--lg\"></div>\n  </div>\n</div>"
+            "templateData": "<div class=\"container max-width-xl padding-y-md\">\n  <div class=\"grid\">\n    <div class=\"col col-2@md grid\" *ngFor=\"let type of appIcons\">\n        <div class=\"icon icon-{{type}} col col-2 icon--lg\"></div>\n        <div class=\"text-xs padding-y-sm\">.icon-{{type}}</div>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "TypographyComponent",

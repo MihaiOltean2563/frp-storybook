@@ -1,8 +1,78 @@
 <div class="container max-width-xl padding-y-md">
+
+  <h4 class="padding-bottom-sm text-underline font-italic">Colors</h4>
   <div class="grid">
-    <div class="col col-2@md grid" *ngFor="let type of appIcons">
-        <div class="icon icon-{{type}} col col-2 icon--lg"></div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border" data-theme="beko">
+      <div class="icon icon-cooker col col-2 icon--lg padding-top-xs color-primary"></div>
+      <div class="text-xs padding-y-sm color-primary">Beko</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border" data-theme="hoover">
+      <div class="icon icon-dishwasher col col-2 icon--lg padding-top-xs color-primary"></div>
+      <div class="text-xs padding-y-sm color-primary">Hoover</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border" data-theme="candy">
+      <div class="icon icon-tumble-dryer col col-2 icon--lg padding-top-xs color-primary"></div>
+      <div class="text-xs padding-y-sm color-primary">Candy</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border" data-theme="hotpoint">
+      <div class="icon icon-washing-machine col col-2 icon--lg padding-top-xs color-primary"></div>
+      <div class="text-xs padding-y-sm color-primary">Hotpoint</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-tick col col-2 icon--lg padding-top-xs color-success"></div>
+      <div class="text-xs padding-y-sm color-success">Success</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-cross col col-2 icon--lg padding-top-xs color-error"></div>
+      <div class="text-xs padding-y-sm color-error">Error</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-washing-machine col col-2 icon--lg padding-top-xs color-warning"></div>
+      <div class="text-xs padding-y-sm color-warning">Warning</div>
+    </div>
+  </div>
+
+  <h4 class="padding-y-sm text-underline font-italic">Types</h4>
+  <div class="grid">
+    <div class="col-3@sm col-2@md flex border flex-column items-center flex-center" *ngFor="let type of appIcons">
+        <div class="icon icon-{{type}} col col-2 icon--lg padding-top-xs"></div>
         <div class="text-xs padding-y-sm">.icon-{{type}}</div>
+    </div>
+  </div>
+  
+  <h4 class="padding-y-sm text-underline font-italic">Sizes</h4>
+  <div class="grid">
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--xxs"></div>
+      <div class="text-xs padding-y-sm">.icon--xxs</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--xs"></div>
+      <div class="text-xs padding-y-sm">.icon--xs</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--sm"></div>
+      <div class="text-xs padding-y-sm">.icon--sm</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--md"></div>
+      <div class="text-xs padding-y-sm">.icon--md</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--lg"></div>
+      <div class="text-xs padding-y-sm">.icon--lg</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--xl"></div>
+      <div class="text-xs padding-y-sm">.icon--xl</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--xxl"></div>
+      <div class="text-xs padding-y-sm">.icon--xxl</div>
+    </div>
+    <div class="col-3@sm col-2@md flex flex-column items-center flex-center border">
+      <div class="icon icon-savings icon--xxxl"></div>
+      <div class="text-xs padding-y-sm">.icon--xxxl</div>
     </div>
   </div>
 </div>
