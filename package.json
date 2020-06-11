@@ -10,7 +10,9 @@
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 9008 -s src/assets",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook-aws": "storybook-to-aws-s3"
   },
   "private": true,
   "dependencies": {
@@ -33,12 +35,16 @@
     "@angular/language-service": "~9.1.4",
     "@babel/core": "^7.9.6",
     "@compodoc/compodoc": "^1.1.11",
+    "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-docs": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addon-notes": "^5.3.18",
+    "@storybook/addon-viewport": "^5.3.19",
     "@storybook/addons": "^5.3.18",
     "@storybook/angular": "^5.3.18",
+    "@storybook/storybook-deployer": "^2.8.6",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",

@@ -23,6 +23,10 @@ export default {
 export const Grids = () => ({
   component: GridComponent,
   template: `
-  <div class="container">Grid test here</div>  
+    <div class="story">
+      <app-grid></app-grid>
+    </div>
   `
 });
+
+//https://codyhouse.co/ds/docs/framework/grid-layout#container

@@ -23,6 +23,6 @@ export default {
 export const Containers = () => ({
   component: ContainerComponent,
   template: `
-  <div class="container">Container test here</div>  
+    <app-container></app-container> 
   `
 });
