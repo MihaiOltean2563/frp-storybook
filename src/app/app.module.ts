@@ -10,6 +10,7 @@ import { ContainerComponent } from './styleguide/layout/container/container.comp
 import { GridComponent } from './styleguide/layout/grid/grid.component';
 import { IconsComponent } from './styleguide/icons/icons.component';
 import { TypographyComponent } from './styleguide/typography/typography/typography.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TypographyComponent } from './styleguide/typography/typography/typograp
     ContainerComponent,
     GridComponent,
     IconsComponent,
-    TypographyComponent
+    TypographyComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule

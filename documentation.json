@@ -85,6 +85,62 @@
             "templateData": "<span>{{ title }} app is running!</span>\n"
         },
         {
+            "name": "BannerComponent",
+            "id": "component-BannerComponent-9f3be468cff89449942614a3f62e81a0",
+            "file": "src/app/components/banner/banner.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-banner",
+            "styleUrls": [
+                "./banner.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./banner.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss']\n})\nexport class BannerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./banner.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\n    <section >\n        <details>details</details>\n    </section>\n</div>"
+        },
+        {
             "name": "BordersComponent",
             "id": "component-BordersComponent-7dee8d3342d4e0f8643e1eacbcfbe98f",
             "file": "src/app/styleguide/typography/borders/borders.component.ts",
@@ -526,7 +582,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container max-width-xl padding-y-md\">\n  <div class=\"grid\">\n    <div class=\"col col-2@md grid\" *ngFor=\"let type of appIcons\">\n        <div class=\"icon icon-{{type}} col col-2 icon--lg\"></div>\n        <div class=\"text-xs padding-y-sm\">.icon-{{type}}</div>\n    </div>\n  </div>\n</div>"
+            "templateData": "<div class=\"container max-width-xl padding-y-md\">\n\n  <h4 class=\"padding-bottom-sm text-underline font-italic\">Colors</h4>\n  <div class=\"grid\">\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\" data-theme=\"beko\">\n      <div class=\"icon icon-cooker col col-2 icon--lg padding-top-xs color-primary\"></div>\n      <div class=\"text-xs padding-y-sm color-primary\">Beko</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\" data-theme=\"hoover\">\n      <div class=\"icon icon-dishwasher col col-2 icon--lg padding-top-xs color-primary\"></div>\n      <div class=\"text-xs padding-y-sm color-primary\">Hoover</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\" data-theme=\"candy\">\n      <div class=\"icon icon-tumble-dryer col col-2 icon--lg padding-top-xs color-primary\"></div>\n      <div class=\"text-xs padding-y-sm color-primary\">Candy</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\" data-theme=\"hotpoint\">\n      <div class=\"icon icon-washing-machine col col-2 icon--lg padding-top-xs color-primary\"></div>\n      <div class=\"text-xs padding-y-sm color-primary\">Hotpoint</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-tick col col-2 icon--lg padding-top-xs color-success\"></div>\n      <div class=\"text-xs padding-y-sm color-success\">Success</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-cross col col-2 icon--lg padding-top-xs color-error\"></div>\n      <div class=\"text-xs padding-y-sm color-error\">Error</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-washing-machine col col-2 icon--lg padding-top-xs color-warning\"></div>\n      <div class=\"text-xs padding-y-sm color-warning\">Warning</div>\n    </div>\n  </div>\n\n  <h4 class=\"padding-y-sm text-underline font-italic\">Types</h4>\n  <div class=\"grid\">\n    <div class=\"col-3@sm col-2@md flex border flex-column items-center flex-center\" *ngFor=\"let type of appIcons\">\n        <div class=\"icon icon-{{type}} col col-2 icon--lg padding-top-xs\"></div>\n        <div class=\"text-xs padding-y-sm\">.icon-{{type}}</div>\n    </div>\n  </div>\n  \n  <h4 class=\"padding-y-sm text-underline font-italic\">Sizes</h4>\n  <div class=\"grid\">\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--xxs\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--xxs</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--xs\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--xs</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--sm\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--sm</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--md\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--md</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--lg\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--lg</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--xl\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--xl</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--xxl\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--xxl</div>\n    </div>\n    <div class=\"col-3@sm col-2@md flex flex-column items-center flex-center border\">\n      <div class=\"icon icon-savings icon--xxxl\"></div>\n      <div class=\"text-xs padding-y-sm\">.icon--xxxl</div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "TypographyComponent",
@@ -598,6 +654,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "BannerComponent"
                         },
                         {
                             "name": "BordersComponent"
@@ -683,6 +742,14 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: BannerComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n        <app-banner></app-banner>\r\n    </div>\r\n  `\r\n})"
+            },
+            {
                 "name": "defaultValue",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -694,17 +761,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "Grids",
@@ -837,6 +904,16 @@
                     "type": "literal type"
                 }
             ],
+            "src/app/components/banner/banner.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: BannerComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n        <app-banner></app-banner>\r\n    </div>\r\n  `\r\n})"
+                }
+            ],
             "src/app/components/button/button.stories.ts": [
                 {
                     "name": "defaultValue",
@@ -895,16 +972,6 @@
                     "defaultValue": "boolean(label, defaultValue)"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -913,6 +980,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/app/styleguide/layout/grid/grid.stories.ts": [
@@ -971,6 +1048,25 @@
                 "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
