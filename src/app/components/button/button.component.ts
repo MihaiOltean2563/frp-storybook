@@ -16,7 +16,7 @@ export class ButtonComponent {
   @Output() clicked: EventEmitter<null> = new EventEmitter();
 
   /*** Emit button clicked */
-  public onClick(e): void {
+  public onClick(): void {
     this.clicked.emit();
   }
  

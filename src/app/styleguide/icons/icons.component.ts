@@ -11,7 +11,7 @@ export class IconsComponent implements OnInit {
   /**
  * Classes for all icons
  */
-  private appIcons = [
+  public appIcons = [
     'cooker',
     'dishwasher',
     'fridge-freezer',
