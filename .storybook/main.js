@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-notes', 
     '@storybook/addon-a11y/register',
     '@storybook/addon-knobs/register',
+    "storybook-addon-xd-designs/register",
     {
       name: '@storybook/addon-docs',
       options: {
@@ -25,3 +26,7 @@ module.exports = {
  * https://github.com/storybookjs/storybook/tree/master/addons/viewport - '@storybook/addon-viewport/register',
  * https://github.com/storybookjs/storybook/tree/master/addons/a11y
  */
+
+ /**
+  * https://open-wc.org/demoing-storybook/?path=/story/decorators-withwebcomponentknobs--provide-own-light-dom
+  */
