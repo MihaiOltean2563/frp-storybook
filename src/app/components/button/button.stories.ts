@@ -2,7 +2,8 @@ import { ButtonComponent } from './button.component';
 import { moduleMetadata } from '@storybook/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { withActions } from '@storybook/addon-actions';
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { withXD } from 'storybook-addon-xd-designs'
 
 export default {
   title: 'Elements|Button',
@@ -13,6 +14,9 @@ export default {
       'Buttons are interactable elements that allow the user to take actions and make choices. They are often placed in your UI in places like: dialogs, modals, forms and cards. They can be presented as a loading state whilst background actions are performed',
     docs: {
       iframeHeight: 200
+    },
+    design: {
+      artboardUrl: 'https://xd.adobe.com/view/ae7472ea-b4ac-47c4-4eb9-7aff91446d91-d845/screen/ca95c951-f010-498f-84c6-1cf10f344616/Desktop',
     }
   },
   decorators: [
@@ -20,6 +24,7 @@ export default {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       declarations: [ButtonComponent]
     }),
+    withXD,
     withActions('mouseover', 'click .btn', 'contextmenu'),
     withKnobs
   ]

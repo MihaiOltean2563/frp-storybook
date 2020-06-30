@@ -85,62 +85,6 @@
             "templateData": "<span>{{ title }} app is running!</span>\n"
         },
         {
-            "name": "BannerComponent",
-            "id": "component-BannerComponent-0be96bccdfd087d92134f92ab2942654",
-            "file": "src/app/components/banner/banner.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-banner",
-            "styleUrls": [
-                "./banner.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./banner.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-banner',\r\n  templateUrl: './banner.component.html',\r\n  styleUrls: ['./banner.component.scss']\r\n})\r\nexport class BannerComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./banner.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"container\">\r\n    <section >\r\n        <details>details</details>\r\n    </section>\r\n</div>"
-        },
-        {
             "name": "BordersComponent",
             "id": "component-BordersComponent-c0e5f6da204d5b369a31a6fa5a2ed0d9",
             "file": "src/app/styleguide/typography/borders/borders.component.ts",
@@ -642,9 +586,6 @@
                             "name": "AppComponent"
                         },
                         {
-                            "name": "BannerComponent"
-                        },
-                        {
                             "name": "BordersComponent"
                         },
                         {
@@ -726,14 +667,6 @@
                 "file": "src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/banner/banner.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n  component: BannerComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n        <app-banner></app-banner>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "defaultValue",
@@ -890,16 +823,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/app/components/banner/banner.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/banner/banner.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: BannerComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n        <app-banner></app-banner>\r\n    </div>\r\n  `\r\n})"
-                }
-            ],
             "src/app/components/button/button.stories.ts": [
                 {
                     "name": "defaultValue",
@@ -1034,25 +957,6 @@
                 "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/banner/banner.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "BannerComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/banner/banner.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
