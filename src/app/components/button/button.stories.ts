@@ -4,11 +4,12 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { withActions } from '@storybook/addon-actions';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { withXD } from 'storybook-addon-xd-designs'
+import { withA11y } from '@storybook/addon-a11y';
+import StorybookVRhythm from 'storybook-vrhythm';
 
 export default {
   title: 'Elements|Button',
   component: ButtonComponent,
-  
   parameters: {
     componentSubtitle: 
       'Buttons are interactable elements that allow the user to take actions and make choices. They are often placed in your UI in places like: dialogs, modals, forms and cards. They can be presented as a loading state whilst background actions are performed',
@@ -17,7 +18,13 @@ export default {
     },
     design: {
       artboardUrl: 'https://xd.adobe.com/view/ae7472ea-b4ac-47c4-4eb9-7aff91446d91-d845/screen/ca95c951-f010-498f-84c6-1cf10f344616/Desktop',
-    }
+    },
+    vrhythm: {
+      color: 'rgba(178,86,18,0.5)',
+      lineHeight: '16px',
+      offset: 0,
+      hide: true
+    },
   },
   decorators: [
     moduleMetadata({
@@ -26,7 +33,9 @@ export default {
     }),
     withXD,
     withActions('mouseover', 'click .btn', 'contextmenu'),
-    withKnobs
+    withKnobs,
+    withA11y,
+    StorybookVRhythm
   ]
 };
 const label = 'Loading';
