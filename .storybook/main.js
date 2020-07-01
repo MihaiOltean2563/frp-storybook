@@ -29,9 +29,3 @@ module.exports = {
  * https://github.com/storybookjs/storybook/tree/master/addons/storysource
  * https://github.com/morgs32/storybook-addon-xd-designs
  */
-
- /**
-  * https://open-wc.org/demoing-storybook/?path=/story/decorators-withwebcomponentknobs--provide-own-light-dom
-  */
-
-  //https://stenciljs.com/docs/angular#stencil-config-setup

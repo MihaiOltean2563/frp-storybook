@@ -142,7 +142,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-3235579aa8b35d7df25eed1883fd98cd",
+            "id": "component-ButtonComponent-b48ad6e90f91f71cc62701bd885779d8",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -163,8 +163,15 @@
                     "name": "isLoading",
                     "defaultValue": "false",
                     "description": "<ul>\n<li>Specify whether the button should show a loading spinner </li>\n</ul>\n",
-                    "line": 13,
+                    "line": 18,
                     "type": "boolean"
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "'default'",
+                    "description": "<ul>\n<li>Specify a brand name string that matches a scss declaration in _colors.scss</li>\n</ul>\n",
+                    "line": 15,
+                    "type": "string"
                 },
                 {
                     "name": "type",
@@ -179,7 +186,7 @@
                     "name": "clicked",
                     "defaultValue": "new EventEmitter()",
                     "description": "<ul>\n<li>Output - button clicked </li>\n</ul>\n",
-                    "line": 16,
+                    "line": 21,
                     "type": "EventEmitter<null>"
                 }
             ],
@@ -191,7 +198,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 24,
                     "description": "<ul>\n<li>Emit button clicked </li>\n</ul>\n",
                     "modifierKind": [
                         114
@@ -203,16 +210,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss']\r\n})\r\nexport class ButtonComponent {\r\n  /*** Specify the variant of the button */\r\n  @Input() type: 'primary' | 'secondary' = 'primary';\r\n  \r\n  /*** Specify whether the button should show a loading spinner */\r\n  @Input() isLoading: boolean = false;\r\n\r\n  /*** Output - button clicked */\r\n  @Output() clicked: EventEmitter<null> = new EventEmitter();\r\n\r\n  /*** Emit button clicked */\r\n  public onClick(): void {\r\n    this.clicked.emit();\r\n  }\r\n \r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss']\r\n})\r\nexport class ButtonComponent{\r\n  /*** Specify the variant of the button */\r\n  @Input() type: 'primary' | 'secondary' = 'primary';\r\n\r\n  /*** \r\n   * Specify a brand name string that matches a scss declaration in _colors.scss\r\n  */\r\n  @Input() theme: string = 'default';\r\n  \r\n  /*** Specify whether the button should show a loading spinner */\r\n  @Input() isLoading: boolean = false;\r\n\r\n  /*** Output - button clicked */\r\n  @Output() clicked: EventEmitter<null> = new EventEmitter();\r\n\r\n  /*** Emit button clicked */\r\n  public onClick(): void {\r\n    this.clicked.emit();\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":root {\r\n    --btn-font-size: 1em;\r\n    --btn-font-size-sm: calc(var(--btn-font-size) - 0.2em);\r\n    --btn-font-size-md: calc(var(--btn-font-size) + 0.2em);\r\n    --btn-font-size-lg: calc(var(--btn-font-size) + 0.4em);\r\n    --btn-padding-x: var(--space-sm);\r\n    --btn-padding-y: var(--space-xs);\r\n    --btn-radius: 0.25em;\r\n  }\r\n\r\n// .btn{\r\n//   text-align: center;\r\n//   font-size: 16px;\r\n//   letter-spacing: normal;\r\n//   line-height: normal;\r\n//   width: 100%;\r\n//   padding: 12px 16px;\r\n//   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;\r\n//   background-color: #1FB5BE;\r\n//   border-style: solid;\r\n//   border-color: #1FB5BE;\r\n//   cursor: pointer;\r\n//   color: #fff;\r\n//   border-radius: 3px;\r\n\r\n//   &--secondary{\r\n//     background-color: #fff;\r\n//     color: #1FB5BE;\r\n//     border-width: 2px;\r\n//   }\r\n\r\n//   &.loading-ring{\r\n//     display: flex;\r\n//     justify-content: center;\r\n//     align-items: center;\r\n//     pointer-events: none;\r\n//     .content{\r\n//       visibility: hidden;\r\n//     }\r\n//     div:not(.content){\r\n//       box-sizing: border-box;\r\n//       width: 25px;\r\n//       height: 25px;\r\n//       border: 2px solid #1FB5BE;\r\n//       border-top-color: #fff;\r\n//       border-right-color: #fff;\r\n//       border-radius: 50%;\r\n//       animation: 1s spin infinite ease-in-out;\r\n//       position: absolute;\r\n//     }\r\n//   }\r\n// }\r\n\r\n// @keyframes spin {\r\n//   to{\r\n//     transform: rotate(360deg);\r\n//   }\r\n// }",
+                    "data": ":host{\r\n  display: inline-block;\r\n}\r\n\r\n// .btn{\r\n//   text-align: center;\r\n//   font-size: 16px;\r\n//   letter-spacing: normal;\r\n//   line-height: normal;\r\n//   width: 100%;\r\n//   padding: 12px 16px;\r\n//   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;\r\n//   background-color: #1FB5BE;\r\n//   border-style: solid;\r\n//   border-color: #1FB5BE;\r\n//   cursor: pointer;\r\n//   color: #fff;\r\n//   border-radius: 3px;\r\n\r\n//   &--secondary{\r\n//     background-color: #fff;\r\n//     color: #1FB5BE;\r\n//     border-width: 2px;\r\n//   }\r\n\r\n//   &.loading-ring{\r\n//     display: flex;\r\n//     justify-content: center;\r\n//     align-items: center;\r\n//     pointer-events: none;\r\n//     .content{\r\n//       visibility: hidden;\r\n//     }\r\n//     div:not(.content){\r\n//       box-sizing: border-box;\r\n//       width: 25px;\r\n//       height: 25px;\r\n//       border: 2px solid #1FB5BE;\r\n//       border-top-color: #fff;\r\n//       border-right-color: #fff;\r\n//       border-radius: 50%;\r\n//       animation: 1s spin infinite ease-in-out;\r\n//       position: absolute;\r\n//     }\r\n//   }\r\n// }\r\n\r\n// @keyframes spin {\r\n//   to{\r\n//     transform: rotate(360deg);\r\n//   }\r\n// }",
                     "styleUrl": "./button.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"container\">\r\n  <button \r\n    class=\"btn btn--{{type}}\" \r\n    [ngClass]=\"{'loading-ring': isLoading }\"\r\n    (click)=\"onClick()\">\r\n    <div></div>\r\n    <div class=\"content\">\r\n      <ng-content></ng-content>\r\n    </div>\r\n  </button>\r\n</div>"
+            "templateData": "<button \r\n  class=\"btn btn--{{type}}\"\r\n  [attr.data-theme]=\"theme | lowercase\"\r\n  [ngClass]=\"{'loading-ring': isLoading }\"\r\n  (click)=\"onClick()\">\r\n  <div></div>\r\n  <div class=\"content\">\r\n    <ng-content></ng-content>\r\n  </div>\r\n</button>"
         },
         {
             "name": "CheckboxComponent",
@@ -637,6 +644,14 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "arrayOfObjects",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "any",
+                "defaultValue": "[\r\n  {label: 'Beko'},\r\n  {label: 'Hoover'},\r\n  {label: 'Candy'},\r\n  {label: 'Hotpoint'}\r\n]"
+            },
+            {
                 "name": "Borders",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -677,6 +692,14 @@
                 "defaultValue": "false"
             },
             {
+                "name": "defaultValueTwo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "",
+                "defaultValue": "arrayOfObjects[0]"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -701,14 +724,6 @@
                 "defaultValue": "() => ({\r\n  component: GridComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-grid></app-grid>\r\n    </div>\r\n  `\r\n})"
             },
             {
-                "name": "groupId",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "string",
-                "defaultValue": "'GROUP-ID1'"
-            },
-            {
                 "name": "Icons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -725,12 +740,20 @@
                 "defaultValue": "'Loading'"
             },
             {
+                "name": "labelTwo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "string",
+                "defaultValue": "'Brand themes'"
+            },
+            {
                 "name": "Loading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"true\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, true),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "Primary",
@@ -738,7 +761,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "require",
@@ -753,7 +776,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [type]=\"'secondary'\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "Typography",
@@ -762,20 +785,78 @@
                 "file": "src/app/styleguide/typography/typography/typography.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: TypographyComponent,\r\n  template: `\r\n   <app-typography></app-typography>\r\n  `\r\n})"
-            },
-            {
-                "name": "value",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "boolean(label, defaultValue)"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/components/button/button.stories.ts": [
+                {
+                    "name": "arrayOfObjects",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "any",
+                    "defaultValue": "[\r\n  {label: 'Beko'},\r\n  {label: 'Hoover'},\r\n  {label: 'Candy'},\r\n  {label: 'Hotpoint'}\r\n]"
+                },
+                {
+                    "name": "defaultValue",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "defaultValueTwo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "arrayOfObjects[0]"
+                },
+                {
+                    "name": "label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'Loading'"
+                },
+                {
+                    "name": "labelTwo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'Brand themes'"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, true),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                }
+            ],
             "src/app/styleguide/typography/borders/borders.stories.ts": [
                 {
                     "name": "Borders",
@@ -821,64 +902,6 @@
                     "subtype": "variable",
                     "file": "src/test.ts",
                     "type": "literal type"
-                }
-            ],
-            "src/app/components/button/button.stories.ts": [
-                {
-                    "name": "defaultValue",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "false"
-                },
-                {
-                    "name": "groupId",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "string",
-                    "defaultValue": "'GROUP-ID1'"
-                },
-                {
-                    "name": "label",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "string",
-                    "defaultValue": "'Loading'"
-                },
-                {
-                    "name": "Loading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"true\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [type]=\"'secondary'\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "value",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "boolean(label, defaultValue)"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -964,9 +987,19 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 80,
-                "coverageCount": "4/5",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "arrayOfObjects",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/app/components/button/button.stories.ts",
@@ -983,7 +1016,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "groupId",
+                "name": "defaultValueTwo",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -994,6 +1027,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "labelTwo",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1024,16 +1067,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "value",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,11 +1,10 @@
-<div class="container">
-  <button 
-    class="btn btn--{{type}}" 
-    [ngClass]="{'loading-ring': isLoading }"
-    (click)="onClick()">
-    <div></div>
-    <div class="content">
-      <ng-content></ng-content>
-    </div>
-  </button>
-</div>
+<button 
+  class="btn btn--{{type}}"
+  [attr.data-theme]="theme | lowercase"
+  [ngClass]="{'loading-ring': isLoading }"
+  (click)="onClick()">
+  <div></div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</button>
