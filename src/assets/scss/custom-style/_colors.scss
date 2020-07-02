@@ -55,13 +55,21 @@
 
 [data-theme="beko"] {
   // --color-primary-hex: #0083BE;
-  @include defineColorHSL(--color-primary, 199, 100%, 37%);
+  // @include defineColorHSL(--color-primary, 199, 100%, 37%);
+  // @include defineColorHSL(--color-secondary, 56, 80%, 17%);
   // color contrasts
   @include defineColorHSL(--color-primary-darker, 199, 90%, 12%);
   @include defineColorHSL(--color-primary-dark, 199, 90%, 29%);
   @include defineColorHSL(--color-primary, 199, 100%, 37%);
   @include defineColorHSL(--color-primary-light, 199, 90%, 58%);
   @include defineColorHSL(--color-primary-lighter, 199, 90%, 70%);
+  //secondary
+  @include defineColorHSL(--color-secondary-darker, 56, 80%, 9%);
+  @include defineColorHSL(--color-secondary-dark, 56, 80%, 13%);
+  @include defineColorHSL(--color-secondary, 56, 80%, 17%);
+  @include defineColorHSL(--color-secondary-light, 56, 80%, 57%);
+  @include defineColorHSL(--color-secondary-lighter, 56, 80%, 77%);
+
 }
 
 [data-theme="hoover"] {
@@ -72,6 +80,12 @@
   @include defineColorHSL(--color-primary-dark, 349, 100%, 29%);
   @include defineColorHSL(--color-primary-light, 349, 100%, 58%);
   @include defineColorHSL(--color-primary-lighter, 349, 100%, 70%);
+  //secondary
+  @include defineColorHSL(--color-secondary-darker, 300, 100%, 12%);
+  @include defineColorHSL(--color-secondary-dark, 300, 100%, 23%);
+  @include defineColorHSL(--color-secondary, 300, 100%, 35%);
+  @include defineColorHSL(--color-secondary-light, 300, 100%, 57%);
+  @include defineColorHSL(--color-secondary-lighter, 300, 100%, 77%);
 }
 [data-theme="candy"] {
   // --color-primary-hex:#00AEE6;
@@ -81,6 +95,12 @@
   @include defineColorHSL(--color-primary-dark, 195, 100%, 29%);
   @include defineColorHSL(--color-primary-light, 195, 100%, 58%);
   @include defineColorHSL(--color-primary-lighter, 195, 100%, 70%);
+   //secondary
+   @include defineColorHSL(--color-secondary-darker, 210, 100%, 22%);
+   @include defineColorHSL(--color-secondary-dark, 210, 100%, 53%);
+   @include defineColorHSL(--color-secondary, 210, 100%, 80%);
+   @include defineColorHSL(--color-secondary-light, 210, 100%, 90%);
+   @include defineColorHSL(--color-secondary-lighter, 210, 100%, 98%);
 }
 [data-theme="hotpoint"] {
   //  --color-primary-hex: #1FB5BE;

@@ -1,6 +1,89 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "Viewport",
+            "id": "interface-Viewport-e85c598f97cb5f3b3c35d4be13d828e2",
+            "file": "src/utils/viewport-map.interface.ts",
+            "type": "interface",
+            "sourceCode": "export type Styles = ViewportStyles | ((s: ViewportStyles) => ViewportStyles) | null;\r\n\r\nexport interface Viewport {\r\n  name: string;\r\n  styles: Styles;\r\n  type: 'desktop' | 'mobile' | 'tablet' | 'other';\r\n}\r\n\r\nexport interface ViewportStyles {\r\n  height: string;\r\n  width: string;\r\n}\r\n\r\nexport interface ViewportMap {\r\n  [key: string]: Viewport;\r\n}",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "styles",
+                    "type": "Styles",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "type",
+                    "type": "\"desktop\" | \"mobile\" | \"tablet\" | \"other\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "ViewportMap",
+            "id": "interface-ViewportMap-e85c598f97cb5f3b3c35d4be13d828e2",
+            "file": "src/utils/viewport-map.interface.ts",
+            "type": "interface",
+            "sourceCode": "export type Styles = ViewportStyles | ((s: ViewportStyles) => ViewportStyles) | null;\r\n\r\nexport interface Viewport {\r\n  name: string;\r\n  styles: Styles;\r\n  type: 'desktop' | 'mobile' | 'tablet' | 'other';\r\n}\r\n\r\nexport interface ViewportStyles {\r\n  height: string;\r\n  width: string;\r\n}\r\n\r\nexport interface ViewportMap {\r\n  [key: string]: Viewport;\r\n}",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-e85c598f97cb5f3b3c35d4be13d828e2",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string"
+                        }
+                    ],
+                    "returnType": "Viewport",
+                    "line": 14
+                }
+            ],
+            "kind": 159,
+            "methods": []
+        },
+        {
+            "name": "ViewportStyles",
+            "id": "interface-ViewportStyles-e85c598f97cb5f3b3c35d4be13d828e2",
+            "file": "src/utils/viewport-map.interface.ts",
+            "type": "interface",
+            "sourceCode": "export type Styles = ViewportStyles | ((s: ViewportStyles) => ViewportStyles) | null;\r\n\r\nexport interface Viewport {\r\n  name: string;\r\n  styles: Styles;\r\n  type: 'desktop' | 'mobile' | 'tablet' | 'other';\r\n}\r\n\r\nexport interface ViewportStyles {\r\n  height: string;\r\n  width: string;\r\n}\r\n\r\nexport interface ViewportMap {\r\n  [key: string]: Viewport;\r\n}",
+            "properties": [
+                {
+                    "name": "height",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "width",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "classes": [
         {
@@ -142,7 +225,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-b48ad6e90f91f71cc62701bd885779d8",
+            "id": "component-ButtonComponent-19b8fc125f18b164569d61dd10846282",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -210,7 +293,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss']\r\n})\r\nexport class ButtonComponent{\r\n  /*** Specify the variant of the button */\r\n  @Input() type: 'primary' | 'secondary' = 'primary';\r\n\r\n  /*** \r\n   * Specify a brand name string that matches a scss declaration in _colors.scss\r\n  */\r\n  @Input() theme: string = 'default';\r\n  \r\n  /*** Specify whether the button should show a loading spinner */\r\n  @Input() isLoading: boolean = false;\r\n\r\n  /*** Output - button clicked */\r\n  @Output() clicked: EventEmitter<null> = new EventEmitter();\r\n\r\n  /*** Emit button clicked */\r\n  public onClick(): void {\r\n    this.clicked.emit();\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss']\r\n})\r\nexport class ButtonComponent{\r\n  /*** Specify the variant of the button */\r\n  @Input() type: 'primary' | 'secondary' = 'primary';\r\n\r\n  /*** \r\n   * Specify a brand name string that matches a scss declaration in _colors.scss\r\n  */\r\n  @Input() theme: string = 'default';\r\n  \r\n  /*** Specify whether the button should show a loading spinner */\r\n  @Input() isLoading: boolean = false;\r\n\r\n  /*** Output - button clicked */\r\n  @Output() clicked: EventEmitter<null> = new EventEmitter();\r\n\r\n  /*** Emit button clicked */\r\n  public onClick(): void {\r\n    this.clicked.emit();\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -684,6 +767,14 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "DEFAULT_VIEWPORT",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/utils/viewport-map.ts",
+                "type": "string",
+                "defaultValue": "'responsive'"
+            },
+            {
                 "name": "defaultValue",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -732,6 +823,14 @@
                 "defaultValue": "() => ({\r\n  component: IconsComponent,\r\n  template: `\r\n    <app-icons></app-icons>  \r\n  `\r\n})"
             },
             {
+                "name": "INITIAL_VIEWPORTS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/utils/viewport-map.ts",
+                "type": "ViewportMap",
+                "defaultValue": "{\r\n  iphone5: {\r\n    name: 'iPhone 5',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6: {\r\n    name: 'iPhone 6',\r\n    styles: {\r\n      height: '667px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6p: {\r\n    name: 'iPhone 6 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone8p: {\r\n    name: 'iPhone 8 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonex: {\r\n    name: 'iPhone X',\r\n    styles: {\r\n      height: '812px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexr: {\r\n    name: 'iPhone XR',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexsmax: {\r\n    name: 'iPhone XS Max',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  ipad: {\r\n    name: 'iPad',\r\n    styles: {\r\n      height: '1024px',\r\n      width: '768px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad10p: {\r\n    name: 'iPad Pro 10.5-in',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad12p: {\r\n    name: 'iPad Pro 12.9-in',\r\n    styles: {\r\n      height: '1366px',\r\n      width: '1024px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  galaxys5: {\r\n    name: 'Galaxy S5',\r\n    styles: {\r\n      height: '640px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  galaxys9: {\r\n    name: 'Galaxy S9',\r\n    styles: {\r\n      height: '740px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus5x: {\r\n    name: 'Nexus 5X',\r\n    styles: {\r\n      height: '660px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus6p: {\r\n    name: 'Nexus 6P',\r\n    styles: {\r\n      height: '732px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixel: {\r\n    name: 'Pixel',\r\n    styles: {\r\n      height: '960px',\r\n      width: '540px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixelxl: {\r\n    name: 'Pixel XL',\r\n    styles: {\r\n      height: '1280px',\r\n      width: '720px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n}"
+            },
+            {
                 "name": "label",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -756,6 +855,14 @@
                 "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, true),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
+                "name": "MINIMAL_VIEWPORTS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/utils/viewport-map.ts",
+                "type": "ViewportMap",
+                "defaultValue": "{\r\n  mobile1: {\r\n    name: 'Small mobile',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  mobile2: {\r\n    name: 'Large mobile',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  tablet: {\r\n    name: 'Tablet',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n}"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -776,7 +883,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "Typography",
@@ -788,7 +895,17 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "Styles",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "ViewportStyles |  | null",
+                "file": "src/utils/viewport-map.interface.ts",
+                "description": "",
+                "kind": 168
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/app/components/button/button.stories.ts": [
@@ -854,7 +971,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/button/button.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
                 }
             ],
             "src/app/styleguide/typography/borders/borders.stories.ts": [
@@ -902,6 +1019,32 @@
                     "subtype": "variable",
                     "file": "src/test.ts",
                     "type": "literal type"
+                }
+            ],
+            "src/utils/viewport-map.ts": [
+                {
+                    "name": "DEFAULT_VIEWPORT",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/utils/viewport-map.ts",
+                    "type": "string",
+                    "defaultValue": "'responsive'"
+                },
+                {
+                    "name": "INITIAL_VIEWPORTS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/utils/viewport-map.ts",
+                    "type": "ViewportMap",
+                    "defaultValue": "{\r\n  iphone5: {\r\n    name: 'iPhone 5',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6: {\r\n    name: 'iPhone 6',\r\n    styles: {\r\n      height: '667px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6p: {\r\n    name: 'iPhone 6 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone8p: {\r\n    name: 'iPhone 8 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonex: {\r\n    name: 'iPhone X',\r\n    styles: {\r\n      height: '812px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexr: {\r\n    name: 'iPhone XR',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexsmax: {\r\n    name: 'iPhone XS Max',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  ipad: {\r\n    name: 'iPad',\r\n    styles: {\r\n      height: '1024px',\r\n      width: '768px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad10p: {\r\n    name: 'iPad Pro 10.5-in',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad12p: {\r\n    name: 'iPad Pro 12.9-in',\r\n    styles: {\r\n      height: '1366px',\r\n      width: '1024px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  galaxys5: {\r\n    name: 'Galaxy S5',\r\n    styles: {\r\n      height: '640px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  galaxys9: {\r\n    name: 'Galaxy S9',\r\n    styles: {\r\n      height: '740px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus5x: {\r\n    name: 'Nexus 5X',\r\n    styles: {\r\n      height: '660px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus6p: {\r\n    name: 'Nexus 6P',\r\n    styles: {\r\n      height: '732px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixel: {\r\n    name: 'Pixel',\r\n    styles: {\r\n      height: '960px',\r\n      width: '540px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixelxl: {\r\n    name: 'Pixel XL',\r\n    styles: {\r\n      height: '1280px',\r\n      width: '720px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n}"
+                },
+                {
+                    "name": "MINIMAL_VIEWPORTS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/utils/viewport-map.ts",
+                    "type": "ViewportMap",
+                    "defaultValue": "{\r\n  mobile1: {\r\n    name: 'Small mobile',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  mobile2: {\r\n    name: 'Large mobile',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  tablet: {\r\n    name: 'Tablet',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -957,11 +1100,23 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/utils/viewport-map.interface.ts": [
+                {
+                    "name": "Styles",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "ViewportStyles |  | null",
+                    "file": "src/utils/viewport-map.interface.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -1230,6 +1385,63 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Viewport",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ViewportMap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ViewportStyles",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DEFAULT_VIEWPORT",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "INITIAL_VIEWPORTS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MINIMAL_VIEWPORTS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,5 +1,7 @@
 module.exports = {
-  stories: ['../src/**/*.stories.ts'],
+  // stories: ['../src/**/*.stories.ts'],
+  // stories: ['../src/**/*.stories.{js,mdx,md,ts}'],
+  stories: ['../src/**/*.stories.@(js|mdx|ts)'],
   addons: [
     '@storybook/addon-actions', 
     '@storybook/addon-links', 
@@ -8,7 +10,10 @@ module.exports = {
     '@storybook/addon-knobs/register',
     'storybook-addon-xd-designs/register',
     '@storybook/addon-storysource',
+    '@storybook/addon-viewport',
     'storybook-dark-mode/register',
+    '@storybook/addon-cssresources',
+    '@storybook/addon-design-assets/register',
     {
       name: '@storybook/addon-docs',
       options: {
@@ -24,7 +29,7 @@ module.exports = {
  * https://github.com/storybookjs/storybook/tree/master/addons/links
  * https://github.com/storybookjs/storybook/tree/master/addons/notes
  * https://github.com/storybookjs/storybook/tree/master/addons/docs
- * https://github.com/storybookjs/storybook/tree/master/addons/viewport - DOES NOT WORK in SB 5.3
+ * https://github.com/storybookjs/storybook/tree/master/addons/viewport - works but throws a render error
  * https://github.com/storybookjs/storybook/tree/master/addons/a11y,
  * https://github.com/storybookjs/storybook/tree/master/addons/storysource
  * https://github.com/morgs32/storybook-addon-xd-designs

@@ -6,6 +6,8 @@ import { boolean, text, withKnobs, select } from '@storybook/addon-knobs';
 import { withXD } from 'storybook-addon-xd-designs'
 import { withA11y } from '@storybook/addon-a11y';
 import StorybookVRhythm from 'storybook-vrhythm';
+import { withCssResources } from '@storybook/addon-cssresources';
+// import { centered } from '@storybook/addon-centered/angular';
 
 export default {
   title: 'Elements|Button',
@@ -23,8 +25,21 @@ export default {
       color: 'rgba(178,86,18,0.5)',
       lineHeight: '16px',
       offset: 0,
-      hide: true
+      hide: true //initial state of vertical rhythm
     },
+    cssresources: [
+      {
+        id: `bluetheme`,
+        code: `<style>body { background-color: lightblue; }</style>`,
+        picked: false,
+        hideCode: false, // Defaults to false, this enables you to hide the code snippet and only displays the style selector
+      },
+    ],
+    assets: [
+      'https://www.donwcarpenter.com/static/4b78d99ae91a17d638dc7fe7688d6112/94f53/storybook.png', // link to an external image
+      'https://www.example.com', // link to a webpage
+      'https://www.example.com?id={id}', // link to a webpage with the current story's id in the url
+    ]
   },
   decorators: [
     moduleMetadata({
@@ -35,30 +50,47 @@ export default {
     withActions('mouseover', 'click .btn', 'contextmenu'),
     withKnobs,
     withA11y,
-    StorybookVRhythm
-  ]
+    StorybookVRhythm,
+    withCssResources,
+    // centered //uncomment to center the element within the frame
+   ]
 };
 
-// Refactor for better readability
-const label = 'Loading';
-const defaultValue = false;
+/* Declare custom map object for knobs options */
+const map = new Map();
+map.set('loading', { label: 'Loading',  defaultValue: false});
+map.set('themes', { 
+  label: 'Theme', 
+  brands: [
+    {label: 'Beko'},
+    {label: 'Hoover'},
+    {label: 'Candy'},
+    {label: 'Hotpoint'}
+  ], 
+  defaultValue: {label: 'Beko'}
+});
 
-const labelTwo = 'Brand themes';
-const arrayOfObjects: any = [
-  {label: 'Beko'},
-  {label: 'Hoover'},
-  {label: 'Candy'},
-  {label: 'Hotpoint'}
-];
-const defaultValueTwo = arrayOfObjects[0];
-// Refactor for better readability
+/* Declare vars for easier readability */
+const [
+  loadingLabel, 
+  loadingDefaultValue,
+  themesLabel,
+  themesBrandsList,
+  themesDefaultValue
+  ] = [
+    map.get('loading').label,
+    map.get('loading').defaultValue,
+    map.get('themes').label,
+    map.get('themes').brands,
+    map.get('themes').defaultValue,
+  ];
 
 export const Primary = () => ({
   component: ButtonComponent,
   props:{
     text: text('Label', 'Hello Primary'),
-    isLoading: boolean(label, defaultValue),
-    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)
+    isLoading: boolean(loadingLabel, loadingDefaultValue),
+    theme: select(themesLabel, themesBrandsList, themesDefaultValue)
   },
   template: `
     <div class="story margin-top-sm">
@@ -70,13 +102,12 @@ export const Primary = () => ({
 });
 
 
-
 export const Secondary = () => ({
   component: ButtonComponent,
   props:{
     text: text('Button Text', 'Hello Secondary'),
-    isLoading: boolean(label, defaultValue),
-    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)
+    isLoading: boolean(loadingLabel, loadingDefaultValue),
+    theme: select(themesLabel, themesBrandsList, themesDefaultValue)
   },
   template: `
     <div class="story margin-top-sm">
@@ -91,8 +122,8 @@ export const Loading = () => ({
   component: ButtonComponent,
   props:{
     text: text('Button Text', 'Hello Secondary'),
-    isLoading: boolean(label, true),
-    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)
+    isLoading: boolean(loadingLabel, true),
+    theme: select(themesLabel, themesBrandsList, themesDefaultValue)
   },
   template: `
     <div class="story margin-top-sm">
