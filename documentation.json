@@ -1,6 +1,89 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "Viewport",
+            "id": "interface-Viewport-e85c598f97cb5f3b3c35d4be13d828e2",
+            "file": "src/utils/viewport-map.interface.ts",
+            "type": "interface",
+            "sourceCode": "export type Styles = ViewportStyles | ((s: ViewportStyles) => ViewportStyles) | null;\r\n\r\nexport interface Viewport {\r\n  name: string;\r\n  styles: Styles;\r\n  type: 'desktop' | 'mobile' | 'tablet' | 'other';\r\n}\r\n\r\nexport interface ViewportStyles {\r\n  height: string;\r\n  width: string;\r\n}\r\n\r\nexport interface ViewportMap {\r\n  [key: string]: Viewport;\r\n}",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "styles",
+                    "type": "Styles",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "type",
+                    "type": "\"desktop\" | \"mobile\" | \"tablet\" | \"other\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "ViewportMap",
+            "id": "interface-ViewportMap-e85c598f97cb5f3b3c35d4be13d828e2",
+            "file": "src/utils/viewport-map.interface.ts",
+            "type": "interface",
+            "sourceCode": "export type Styles = ViewportStyles | ((s: ViewportStyles) => ViewportStyles) | null;\r\n\r\nexport interface Viewport {\r\n  name: string;\r\n  styles: Styles;\r\n  type: 'desktop' | 'mobile' | 'tablet' | 'other';\r\n}\r\n\r\nexport interface ViewportStyles {\r\n  height: string;\r\n  width: string;\r\n}\r\n\r\nexport interface ViewportMap {\r\n  [key: string]: Viewport;\r\n}",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-e85c598f97cb5f3b3c35d4be13d828e2",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string"
+                        }
+                    ],
+                    "returnType": "Viewport",
+                    "line": 14
+                }
+            ],
+            "kind": 159,
+            "methods": []
+        },
+        {
+            "name": "ViewportStyles",
+            "id": "interface-ViewportStyles-e85c598f97cb5f3b3c35d4be13d828e2",
+            "file": "src/utils/viewport-map.interface.ts",
+            "type": "interface",
+            "sourceCode": "export type Styles = ViewportStyles | ((s: ViewportStyles) => ViewportStyles) | null;\r\n\r\nexport interface Viewport {\r\n  name: string;\r\n  styles: Styles;\r\n  type: 'desktop' | 'mobile' | 'tablet' | 'other';\r\n}\r\n\r\nexport interface ViewportStyles {\r\n  height: string;\r\n  width: string;\r\n}\r\n\r\nexport interface ViewportMap {\r\n  [key: string]: Viewport;\r\n}",
+            "properties": [
+                {
+                    "name": "height",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "width",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "classes": [
         {
@@ -142,7 +225,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-3235579aa8b35d7df25eed1883fd98cd",
+            "id": "component-ButtonComponent-19b8fc125f18b164569d61dd10846282",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -163,8 +246,15 @@
                     "name": "isLoading",
                     "defaultValue": "false",
                     "description": "<ul>\n<li>Specify whether the button should show a loading spinner </li>\n</ul>\n",
-                    "line": 13,
+                    "line": 18,
                     "type": "boolean"
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "'default'",
+                    "description": "<ul>\n<li>Specify a brand name string that matches a scss declaration in _colors.scss</li>\n</ul>\n",
+                    "line": 15,
+                    "type": "string"
                 },
                 {
                     "name": "type",
@@ -179,7 +269,7 @@
                     "name": "clicked",
                     "defaultValue": "new EventEmitter()",
                     "description": "<ul>\n<li>Output - button clicked </li>\n</ul>\n",
-                    "line": 16,
+                    "line": 21,
                     "type": "EventEmitter<null>"
                 }
             ],
@@ -191,7 +281,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 24,
                     "description": "<ul>\n<li>Emit button clicked </li>\n</ul>\n",
                     "modifierKind": [
                         114
@@ -203,16 +293,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss']\r\n})\r\nexport class ButtonComponent {\r\n  /*** Specify the variant of the button */\r\n  @Input() type: 'primary' | 'secondary' = 'primary';\r\n  \r\n  /*** Specify whether the button should show a loading spinner */\r\n  @Input() isLoading: boolean = false;\r\n\r\n  /*** Output - button clicked */\r\n  @Output() clicked: EventEmitter<null> = new EventEmitter();\r\n\r\n  /*** Emit button clicked */\r\n  public onClick(): void {\r\n    this.clicked.emit();\r\n  }\r\n \r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss']\r\n})\r\nexport class ButtonComponent{\r\n  /*** Specify the variant of the button */\r\n  @Input() type: 'primary' | 'secondary' = 'primary';\r\n\r\n  /*** \r\n   * Specify a brand name string that matches a scss declaration in _colors.scss\r\n  */\r\n  @Input() theme: string = 'default';\r\n  \r\n  /*** Specify whether the button should show a loading spinner */\r\n  @Input() isLoading: boolean = false;\r\n\r\n  /*** Output - button clicked */\r\n  @Output() clicked: EventEmitter<null> = new EventEmitter();\r\n\r\n  /*** Emit button clicked */\r\n  public onClick(): void {\r\n    this.clicked.emit();\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// .btn{\r\n//   text-align: center;\r\n//   font-size: 16px;\r\n//   letter-spacing: normal;\r\n//   line-height: normal;\r\n//   width: 100%;\r\n//   padding: 12px 16px;\r\n//   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;\r\n//   background-color: #1FB5BE;\r\n//   border-style: solid;\r\n//   border-color: #1FB5BE;\r\n//   cursor: pointer;\r\n//   color: #fff;\r\n//   border-radius: 3px;\r\n\r\n//   &--secondary{\r\n//     background-color: #fff;\r\n//     color: #1FB5BE;\r\n//     border-width: 2px;\r\n//   }\r\n\r\n//   &.loading-ring{\r\n//     display: flex;\r\n//     justify-content: center;\r\n//     align-items: center;\r\n//     pointer-events: none;\r\n//     .content{\r\n//       visibility: hidden;\r\n//     }\r\n//     div:not(.content){\r\n//       box-sizing: border-box;\r\n//       width: 25px;\r\n//       height: 25px;\r\n//       border: 2px solid #1FB5BE;\r\n//       border-top-color: #fff;\r\n//       border-right-color: #fff;\r\n//       border-radius: 50%;\r\n//       animation: 1s spin infinite ease-in-out;\r\n//       position: absolute;\r\n//     }\r\n//   }\r\n// }\r\n\r\n// @keyframes spin {\r\n//   to{\r\n//     transform: rotate(360deg);\r\n//   }\r\n// }",
+                    "data": ":host{\r\n  display: inline-block;\r\n}\r\n\r\n// .btn{\r\n//   text-align: center;\r\n//   font-size: 16px;\r\n//   letter-spacing: normal;\r\n//   line-height: normal;\r\n//   width: 100%;\r\n//   padding: 12px 16px;\r\n//   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;\r\n//   background-color: #1FB5BE;\r\n//   border-style: solid;\r\n//   border-color: #1FB5BE;\r\n//   cursor: pointer;\r\n//   color: #fff;\r\n//   border-radius: 3px;\r\n\r\n//   &--secondary{\r\n//     background-color: #fff;\r\n//     color: #1FB5BE;\r\n//     border-width: 2px;\r\n//   }\r\n\r\n//   &.loading-ring{\r\n//     display: flex;\r\n//     justify-content: center;\r\n//     align-items: center;\r\n//     pointer-events: none;\r\n//     .content{\r\n//       visibility: hidden;\r\n//     }\r\n//     div:not(.content){\r\n//       box-sizing: border-box;\r\n//       width: 25px;\r\n//       height: 25px;\r\n//       border: 2px solid #1FB5BE;\r\n//       border-top-color: #fff;\r\n//       border-right-color: #fff;\r\n//       border-radius: 50%;\r\n//       animation: 1s spin infinite ease-in-out;\r\n//       position: absolute;\r\n//     }\r\n//   }\r\n// }\r\n\r\n// @keyframes spin {\r\n//   to{\r\n//     transform: rotate(360deg);\r\n//   }\r\n// }",
                     "styleUrl": "./button.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"container\">\r\n  <button \r\n    class=\"btn btn--{{type}}\" \r\n    [ngClass]=\"{'loading-ring': isLoading }\"\r\n    (click)=\"onClick()\">\r\n    <div></div>\r\n    <div class=\"content\">\r\n      <ng-content></ng-content>\r\n    </div>\r\n  </button>\r\n</div>"
+            "templateData": "<button \r\n  class=\"btn btn--{{type}}\"\r\n  [attr.data-theme]=\"theme | lowercase\"\r\n  [ngClass]=\"{'loading-ring': isLoading }\"\r\n  (click)=\"onClick()\">\r\n  <div></div>\r\n  <div class=\"content\">\r\n    <ng-content></ng-content>\r\n  </div>\r\n</button>"
         },
         {
             "name": "CheckboxComponent",
@@ -637,6 +727,14 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "arrayOfObjects",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "any",
+                "defaultValue": "[\r\n  {label: 'Beko'},\r\n  {label: 'Hoover'},\r\n  {label: 'Candy'},\r\n  {label: 'Hotpoint'}\r\n]"
+            },
+            {
                 "name": "Borders",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -669,12 +767,28 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "DEFAULT_VIEWPORT",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/utils/viewport-map.ts",
+                "type": "string",
+                "defaultValue": "'responsive'"
+            },
+            {
                 "name": "defaultValue",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "false"
+            },
+            {
+                "name": "defaultValueTwo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "",
+                "defaultValue": "arrayOfObjects[0]"
             },
             {
                 "name": "environment",
@@ -701,20 +815,20 @@
                 "defaultValue": "() => ({\r\n  component: GridComponent,\r\n  template: `\r\n    <div class=\"story\">\r\n      <app-grid></app-grid>\r\n    </div>\r\n  `\r\n})"
             },
             {
-                "name": "groupId",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "string",
-                "defaultValue": "'GROUP-ID1'"
-            },
-            {
                 "name": "Icons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/styleguide/icons/icons.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: IconsComponent,\r\n  template: `\r\n    <app-icons></app-icons>  \r\n  `\r\n})"
+            },
+            {
+                "name": "INITIAL_VIEWPORTS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/utils/viewport-map.ts",
+                "type": "ViewportMap",
+                "defaultValue": "{\r\n  iphone5: {\r\n    name: 'iPhone 5',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6: {\r\n    name: 'iPhone 6',\r\n    styles: {\r\n      height: '667px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6p: {\r\n    name: 'iPhone 6 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone8p: {\r\n    name: 'iPhone 8 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonex: {\r\n    name: 'iPhone X',\r\n    styles: {\r\n      height: '812px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexr: {\r\n    name: 'iPhone XR',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexsmax: {\r\n    name: 'iPhone XS Max',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  ipad: {\r\n    name: 'iPad',\r\n    styles: {\r\n      height: '1024px',\r\n      width: '768px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad10p: {\r\n    name: 'iPad Pro 10.5-in',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad12p: {\r\n    name: 'iPad Pro 12.9-in',\r\n    styles: {\r\n      height: '1366px',\r\n      width: '1024px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  galaxys5: {\r\n    name: 'Galaxy S5',\r\n    styles: {\r\n      height: '640px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  galaxys9: {\r\n    name: 'Galaxy S9',\r\n    styles: {\r\n      height: '740px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus5x: {\r\n    name: 'Nexus 5X',\r\n    styles: {\r\n      height: '660px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus6p: {\r\n    name: 'Nexus 6P',\r\n    styles: {\r\n      height: '732px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixel: {\r\n    name: 'Pixel',\r\n    styles: {\r\n      height: '960px',\r\n      width: '540px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixelxl: {\r\n    name: 'Pixel XL',\r\n    styles: {\r\n      height: '1280px',\r\n      width: '720px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n}"
             },
             {
                 "name": "label",
@@ -725,12 +839,28 @@
                 "defaultValue": "'Loading'"
             },
             {
+                "name": "labelTwo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "string",
+                "defaultValue": "'Brand themes'"
+            },
+            {
                 "name": "Loading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"true\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, true),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+            },
+            {
+                "name": "MINIMAL_VIEWPORTS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/utils/viewport-map.ts",
+                "type": "ViewportMap",
+                "defaultValue": "{\r\n  mobile1: {\r\n    name: 'Small mobile',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  mobile2: {\r\n    name: 'Large mobile',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  tablet: {\r\n    name: 'Tablet',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -738,7 +868,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "require",
@@ -753,7 +883,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [type]=\"'secondary'\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "Typography",
@@ -762,20 +892,88 @@
                 "file": "src/app/styleguide/typography/typography/typography.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: TypographyComponent,\r\n  template: `\r\n   <app-typography></app-typography>\r\n  `\r\n})"
-            },
-            {
-                "name": "value",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "boolean(label, defaultValue)"
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "Styles",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "ViewportStyles |  | null",
+                "file": "src/utils/viewport-map.interface.ts",
+                "description": "",
+                "kind": 168
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/components/button/button.stories.ts": [
+                {
+                    "name": "arrayOfObjects",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "any",
+                    "defaultValue": "[\r\n  {label: 'Beko'},\r\n  {label: 'Hoover'},\r\n  {label: 'Candy'},\r\n  {label: 'Hotpoint'}\r\n]"
+                },
+                {
+                    "name": "defaultValue",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "false"
+                },
+                {
+                    "name": "defaultValueTwo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "arrayOfObjects[0]"
+                },
+                {
+                    "name": "label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'Loading'"
+                },
+                {
+                    "name": "labelTwo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'Brand themes'"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, true),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                }
+            ],
             "src/app/styleguide/typography/borders/borders.stories.ts": [
                 {
                     "name": "Borders",
@@ -823,62 +1021,30 @@
                     "type": "literal type"
                 }
             ],
-            "src/app/components/button/button.stories.ts": [
+            "src/utils/viewport-map.ts": [
                 {
-                    "name": "defaultValue",
+                    "name": "DEFAULT_VIEWPORT",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "false"
-                },
-                {
-                    "name": "groupId",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
+                    "file": "src/utils/viewport-map.ts",
                     "type": "string",
-                    "defaultValue": "'GROUP-ID1'"
+                    "defaultValue": "'responsive'"
                 },
                 {
-                    "name": "label",
+                    "name": "INITIAL_VIEWPORTS",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "string",
-                    "defaultValue": "'Loading'"
+                    "file": "src/utils/viewport-map.ts",
+                    "type": "ViewportMap",
+                    "defaultValue": "{\r\n  iphone5: {\r\n    name: 'iPhone 5',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6: {\r\n    name: 'iPhone 6',\r\n    styles: {\r\n      height: '667px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6p: {\r\n    name: 'iPhone 6 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone8p: {\r\n    name: 'iPhone 8 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonex: {\r\n    name: 'iPhone X',\r\n    styles: {\r\n      height: '812px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexr: {\r\n    name: 'iPhone XR',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexsmax: {\r\n    name: 'iPhone XS Max',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  ipad: {\r\n    name: 'iPad',\r\n    styles: {\r\n      height: '1024px',\r\n      width: '768px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad10p: {\r\n    name: 'iPad Pro 10.5-in',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad12p: {\r\n    name: 'iPad Pro 12.9-in',\r\n    styles: {\r\n      height: '1366px',\r\n      width: '1024px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  galaxys5: {\r\n    name: 'Galaxy S5',\r\n    styles: {\r\n      height: '640px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  galaxys9: {\r\n    name: 'Galaxy S9',\r\n    styles: {\r\n      height: '740px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus5x: {\r\n    name: 'Nexus 5X',\r\n    styles: {\r\n      height: '660px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus6p: {\r\n    name: 'Nexus 6P',\r\n    styles: {\r\n      height: '732px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixel: {\r\n    name: 'Pixel',\r\n    styles: {\r\n      height: '960px',\r\n      width: '540px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixelxl: {\r\n    name: 'Pixel XL',\r\n    styles: {\r\n      height: '1280px',\r\n      width: '720px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n}"
                 },
                 {
-                    "name": "Loading",
+                    "name": "MINIMAL_VIEWPORTS",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"true\">Hello button</app-button>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <app-button [type]=\"'secondary'\">{{text}}</app-button>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "value",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "boolean(label, defaultValue)"
+                    "file": "src/utils/viewport-map.ts",
+                    "type": "ViewportMap",
+                    "defaultValue": "{\r\n  mobile1: {\r\n    name: 'Small mobile',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  mobile2: {\r\n    name: 'Large mobile',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  tablet: {\r\n    name: 'Tablet',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -934,11 +1100,23 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/utils/viewport-map.interface.ts": [
+                {
+                    "name": "Styles",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "ViewportStyles |  | null",
+                    "file": "src/utils/viewport-map.interface.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -964,9 +1142,19 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 80,
-                "coverageCount": "4/5",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "arrayOfObjects",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/app/components/button/button.stories.ts",
@@ -983,7 +1171,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "groupId",
+                "name": "defaultValueTwo",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -994,6 +1182,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "labelTwo",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1024,16 +1222,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "value",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1197,6 +1385,63 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Viewport",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ViewportMap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ViewportStyles",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DEFAULT_VIEWPORT",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "INITIAL_VIEWPORTS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utils/viewport-map.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MINIMAL_VIEWPORTS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
