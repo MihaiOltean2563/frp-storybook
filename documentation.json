@@ -727,14 +727,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "arrayOfObjects",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "any",
-                "defaultValue": "[\r\n  {label: 'Beko'},\r\n  {label: 'Hoover'},\r\n  {label: 'Candy'},\r\n  {label: 'Hotpoint'}\r\n]"
-            },
-            {
                 "name": "Borders",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -773,22 +765,6 @@
                 "file": "src/utils/viewport-map.ts",
                 "type": "string",
                 "defaultValue": "'responsive'"
-            },
-            {
-                "name": "defaultValue",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "false"
-            },
-            {
-                "name": "defaultValueTwo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "arrayOfObjects[0]"
             },
             {
                 "name": "environment",
@@ -831,28 +807,20 @@
                 "defaultValue": "{\r\n  iphone5: {\r\n    name: 'iPhone 5',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6: {\r\n    name: 'iPhone 6',\r\n    styles: {\r\n      height: '667px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone6p: {\r\n    name: 'iPhone 6 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphone8p: {\r\n    name: 'iPhone 8 Plus',\r\n    styles: {\r\n      height: '736px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonex: {\r\n    name: 'iPhone X',\r\n    styles: {\r\n      height: '812px',\r\n      width: '375px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexr: {\r\n    name: 'iPhone XR',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  iphonexsmax: {\r\n    name: 'iPhone XS Max',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  ipad: {\r\n    name: 'iPad',\r\n    styles: {\r\n      height: '1024px',\r\n      width: '768px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad10p: {\r\n    name: 'iPad Pro 10.5-in',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  ipad12p: {\r\n    name: 'iPad Pro 12.9-in',\r\n    styles: {\r\n      height: '1366px',\r\n      width: '1024px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n  galaxys5: {\r\n    name: 'Galaxy S5',\r\n    styles: {\r\n      height: '640px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  galaxys9: {\r\n    name: 'Galaxy S9',\r\n    styles: {\r\n      height: '740px',\r\n      width: '360px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus5x: {\r\n    name: 'Nexus 5X',\r\n    styles: {\r\n      height: '660px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  nexus6p: {\r\n    name: 'Nexus 6P',\r\n    styles: {\r\n      height: '732px',\r\n      width: '412px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixel: {\r\n    name: 'Pixel',\r\n    styles: {\r\n      height: '960px',\r\n      width: '540px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  pixelxl: {\r\n    name: 'Pixel XL',\r\n    styles: {\r\n      height: '1280px',\r\n      width: '720px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n}"
             },
             {
-                "name": "label",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "string",
-                "defaultValue": "'Loading'"
-            },
-            {
-                "name": "labelTwo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
-                "type": "string",
-                "defaultValue": "'Brand themes'"
-            },
-            {
                 "name": "Loading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, true),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(loadingLabel, true),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+            },
+            {
+                "name": "map",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "",
+                "defaultValue": "new Map()"
             },
             {
                 "name": "MINIMAL_VIEWPORTS",
@@ -868,7 +836,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "require",
@@ -883,7 +851,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "Typography",
@@ -892,6 +860,13 @@
                 "file": "src/app/styleguide/typography/typography/typography.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: TypographyComponent,\r\n  template: `\r\n   <app-typography></app-typography>\r\n  `\r\n})"
+            },
+            {
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.stories.ts",
+                "type": "[]",
+                "defaultValue": "[\r\n    map.get('loading').label,\r\n    map.get('loading').defaultValue,\r\n    map.get('themes').label,\r\n    map.get('themes').brands,\r\n    map.get('themes').defaultValue,\r\n  ]"
             }
         ],
         "functions": [],
@@ -908,72 +883,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/components/button/button.stories.ts": [
-                {
-                    "name": "arrayOfObjects",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "any",
-                    "defaultValue": "[\r\n  {label: 'Beko'},\r\n  {label: 'Hoover'},\r\n  {label: 'Candy'},\r\n  {label: 'Hotpoint'}\r\n]"
-                },
-                {
-                    "name": "defaultValue",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "false"
-                },
-                {
-                    "name": "defaultValueTwo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "arrayOfObjects[0]"
-                },
-                {
-                    "name": "label",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "string",
-                    "defaultValue": "'Loading'"
-                },
-                {
-                    "name": "labelTwo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "string",
-                    "defaultValue": "'Brand themes'"
-                },
-                {
-                    "name": "Loading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, true),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(label, defaultValue),\r\n    theme: select(labelTwo, arrayOfObjects, defaultValueTwo)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
-                }
-            ],
             "src/app/styleguide/typography/borders/borders.stories.ts": [
                 {
                     "name": "Borders",
@@ -1087,6 +996,47 @@
                     "defaultValue": "() => ({\r\n  component: IconsComponent,\r\n  template: `\r\n    <app-icons></app-icons>  \r\n  `\r\n})"
                 }
             ],
+            "src/app/components/button/button.stories.ts": [
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(loadingLabel, true),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                },
+                {
+                    "name": "map",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "new Map()"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Label', 'Hello Primary'),\r\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                },
+                {
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.stories.ts",
+                    "type": "[]",
+                    "defaultValue": "[\r\n    map.get('loading').label,\r\n    map.get('loading').defaultValue,\r\n    map.get('themes').label,\r\n    map.get('themes').brands,\r\n    map.get('themes').defaultValue,\r\n  ]"
+                }
+            ],
             "src/app/styleguide/typography/typography/typography.stories.ts": [
                 {
                     "name": "Typography",
@@ -1116,7 +1066,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -1151,57 +1101,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "arrayOfObjects",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "defaultValue",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "defaultValueTwo",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "label",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "labelTwo",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "map",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1222,6 +1132,15 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

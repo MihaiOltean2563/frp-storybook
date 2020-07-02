@@ -121,14 +121,14 @@ export const Secondary = () => ({
 export const Loading = () => ({
   component: ButtonComponent,
   props:{
-    text: text('Button Text', 'Hello Secondary'),
+    text: text('Button Text', 'Hello Loading'),
     isLoading: boolean(loadingLabel, true),
     theme: select(themesLabel, themesBrandsList, themesDefaultValue)
   },
   template: `
     <div class="story margin-top-sm">
       <div class="container">
-        <app-button [isLoading]="isLoading" theme="{{theme.label}}">Hello button</app-button>
+        <app-button [isLoading]="isLoading" theme="{{theme.label}}">{{text}}</app-button>
       </div>
     </div>
   `
