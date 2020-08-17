@@ -13,7 +13,7 @@ export default {
     docs: {
       iframeHeight: 400
     },
-    notes: 'TODO - Please add toggle functionality for each of these color rows to shrink/expand to a 50px - 100px divs'
+    notes: 'Add notes here if needed'
   },
   decorators: [
     moduleMetadata({

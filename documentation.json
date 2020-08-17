@@ -88,10 +88,10 @@
     "classes": [
         {
             "name": "AppPage",
-            "id": "class-AppPage-a0db91bfa3b9914e9048612074084ee6",
+            "id": "class-AppPage-b0dda38f970a6690b77b35dfb293b3ac",
             "file": "e2e/src/app.po.ts",
             "type": "class",
-            "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  navigateTo(): Promise<unknown> {\n    return browser.get(browser.baseUrl) as Promise<unknown>;\n  }\n\n  getTitleText(): Promise<string> {\n    return element(by.css('app-root .content span')).getText() as Promise<string>;\n  }\n}\n",
+            "sourceCode": "import { browser, by, element } from 'protractor';\r\n\r\nexport class AppPage {\r\n  navigateTo(): Promise<unknown> {\r\n    return browser.get(browser.baseUrl) as Promise<unknown>;\r\n  }\r\n\r\n  getTitleText(): Promise<string> {\r\n    return element(by.css('app-root .content span')).getText() as Promise<string>;\r\n  }\r\n}\r\n",
             "properties": [],
             "methods": [
                 {
@@ -122,7 +122,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-020b0efe772432eb6f6fe7fbcc37aac8",
+            "id": "component-AppComponent-8ff2b53c7d7d55a735ec5d8ea403dcba",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -156,7 +156,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'frp';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'frp';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -165,7 +165,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<span>{{ title }} app is running!</span>\n"
+            "templateData": "<span>{{ title }} app is running!</span>\r\n"
         },
         {
             "name": "BordersComponent",
@@ -306,7 +306,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-280777f2a18219accd4db1e38923db1c",
+            "id": "component-CheckboxComponent-91cb644d341b4917509b5cfcb62b2822",
             "file": "src/app/components/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -340,7 +340,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-checkbox',\n  templateUrl: './checkbox.component.html',\n  styleUrls: ['./checkbox.component.scss']\n})\nexport class CheckboxComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -358,7 +358,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>checkbox works!</p>\n"
+            "templateData": "<p>checkbox works!</p>\r\n"
         },
         {
             "name": "ColorsComponent",
@@ -770,17 +770,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "Grids",
@@ -812,7 +812,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(loadingLabel, true),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Loading'),\r\n    isLoading: boolean(loadingLabel, true),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
             },
             {
                 "name": "map",
@@ -956,16 +956,6 @@
                     "defaultValue": "{\r\n  mobile1: {\r\n    name: 'Small mobile',\r\n    styles: {\r\n      height: '568px',\r\n      width: '320px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  mobile2: {\r\n    name: 'Large mobile',\r\n    styles: {\r\n      height: '896px',\r\n      width: '414px',\r\n    },\r\n    type: 'mobile',\r\n  },\r\n  tablet: {\r\n    name: 'Tablet',\r\n    styles: {\r\n      height: '1112px',\r\n      width: '834px',\r\n    },\r\n    type: 'tablet',\r\n  },\r\n}"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -973,7 +963,17 @@
                     "subtype": "variable",
                     "file": "src/environments/environment.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/app/styleguide/layout/grid/grid.stories.ts": [
@@ -1003,7 +1003,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/button/button.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Secondary'),\r\n    isLoading: boolean(loadingLabel, true),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">Hello button</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
+                    "defaultValue": "() => ({\r\n  component: ButtonComponent,\r\n  props:{\r\n    text: text('Button Text', 'Hello Loading'),\r\n    isLoading: boolean(loadingLabel, true),\r\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\r\n  },\r\n  template: `\r\n    <div class=\"story margin-top-sm\">\r\n      <div class=\"container\">\r\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\r\n      </div>\r\n    </div>\r\n  `\r\n})"
                 },
                 {
                     "name": "map",
