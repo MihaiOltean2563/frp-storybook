@@ -1,4 +1,15 @@
 @import "./assets/scss/styles.scss";
+
 :root {
-  --color-primary: green;
+  @include defineColorHSL(--color-primary-darker, 199, 90%, 12%);
+  @include defineColorHSL(--color-primary-dark, 199, 90%, 29%);
+  @include defineColorHSL(--color-primary, 199, 100%, 37%);
+  @include defineColorHSL(--color-primary-light, 199, 90%, 58%);
+  @include defineColorHSL(--color-primary-lighter, 199, 90%, 70%);
+  //secondary
+  @include defineColorHSL(--color-secondary-darker, 56, 80%, 9%);
+  @include defineColorHSL(--color-secondary-dark, 56, 80%, 13%);
+  @include defineColorHSL(--color-secondary, 56, 80%, 17%);
+  @include defineColorHSL(--color-secondary-light, 56, 80%, 57%);
+  @include defineColorHSL(--color-secondary-lighter, 56, 80%, 77%);
 }
