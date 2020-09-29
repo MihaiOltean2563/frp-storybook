@@ -31,6 +31,11 @@
                 "input": "src/hotpoint.scss",
                 "bundleName": "hotpoint",
                 "inject": false
+              },
+              {
+                "input": "src/styles.scss",
+                "bundleName": "default",
+                "inject": false
               }
             ],
             "scripts": []
@@ -75,6 +80,12 @@
             "production": {
               "browserTarget": "frp:build:production"
             }
+          }
+        },
+        "storybook": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "frp:build"
           }
         },
         "extract-i18n": {

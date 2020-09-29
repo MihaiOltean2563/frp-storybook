@@ -361,7 +361,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<button \n  class=\"btn btn--{{type}}\"\n  [attr.data-theme]=\"theme | lowercase\"\n  [ngClass]=\"{'loading-ring': isLoading }\"\n  (click)=\"onClick()\">\n  <div></div>\n  <div class=\"content\">\n    <ng-content></ng-content>\n  </div>\n</button>"
+            "templateData": "<button\n  class=\"btn btn--{{type}}\"\n  [ngClass]=\"{'loading-ring': isLoading }\"\n  (click)=\"onClick()\">\n  <div></div>\n  <div class=\"content\">\n    <ng-content></ng-content>\n  </div>\n</button>\n"
         },
         {
             "name": "CheckboxComponent",
@@ -829,17 +829,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "Grids",
@@ -871,7 +871,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props:{\n    text: text('Button Text', 'Hello Loading'),\n    isLoading: boolean(loadingLabel, true),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
+                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    text: text('Button Text', 'Hello Loading'),\n    isLoading: boolean(loadingLabel, true),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
             },
             {
                 "name": "map",
@@ -895,14 +895,14 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props:{\n    text: text('Label', 'Hello Primary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
+                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    text: text('Label', 'Hello Primary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
             },
             {
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "[]",
-                "defaultValue": "[\n    map.get('loading').label,\n    map.get('loading').defaultValue,\n    map.get('themes').label,\n    map.get('themes').brands,\n    map.get('themes').defaultValue,\n  ]"
+                "defaultValue": "[\n  map.get('loading').label,\n  map.get('loading').defaultValue,\n  map.get('themes').label,\n  map.get('themes').brands,\n  map.get('themes').defaultValue\n]"
             },
             {
                 "name": "require",
@@ -917,7 +917,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props:{\n    text: text('Button Text', 'Hello Secondary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
+                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    text: text('Button Text', 'Hello Secondary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
             },
             {
                 "name": "Typography",
@@ -1015,16 +1015,6 @@
                     "defaultValue": "{\n  mobile1: {\n    name: 'Small mobile',\n    styles: {\n      height: '568px',\n      width: '320px',\n    },\n    type: 'mobile',\n  },\n  mobile2: {\n    name: 'Large mobile',\n    styles: {\n      height: '896px',\n      width: '414px',\n    },\n    type: 'mobile',\n  },\n  tablet: {\n    name: 'Tablet',\n    styles: {\n      height: '1112px',\n      width: '834px',\n    },\n    type: 'tablet',\n  },\n}"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1033,6 +1023,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/app/styleguide/layout/grid/grid.stories.ts": [
@@ -1062,7 +1062,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/button/button.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props:{\n    text: text('Button Text', 'Hello Loading'),\n    isLoading: boolean(loadingLabel, true),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
+                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    text: text('Button Text', 'Hello Loading'),\n    isLoading: boolean(loadingLabel, true),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
                 },
                 {
                     "name": "map",
@@ -1078,14 +1078,14 @@
                     "subtype": "variable",
                     "file": "src/app/components/button/button.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props:{\n    text: text('Label', 'Hello Primary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
+                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    text: text('Label', 'Hello Primary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [isLoading]=\"isLoading\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
                 },
                 {
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/button/button.stories.ts",
                     "type": "[]",
-                    "defaultValue": "[\n    map.get('loading').label,\n    map.get('loading').defaultValue,\n    map.get('themes').label,\n    map.get('themes').brands,\n    map.get('themes').defaultValue,\n  ]"
+                    "defaultValue": "[\n  map.get('loading').label,\n  map.get('loading').defaultValue,\n  map.get('themes').label,\n  map.get('themes').brands,\n  map.get('themes').defaultValue\n]"
                 },
                 {
                     "name": "Secondary",
@@ -1093,7 +1093,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/button/button.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props:{\n    text: text('Button Text', 'Hello Secondary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\" theme=\"{{theme.label}}\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
+                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    text: text('Button Text', 'Hello Secondary'),\n    isLoading: boolean(loadingLabel, loadingDefaultValue),\n    theme: select(themesLabel, themesBrandsList, themesDefaultValue)\n  },\n  template: `\n    <div class=\"story margin-top-sm\">\n      <div class=\"container\">\n        <app-button [type]=\"'secondary'\" [isLoading]=\"isLoading\">{{text}}</app-button>\n      </div>\n    </div>\n  `\n})"
                 }
             ],
             "src/app/styleguide/typography/typography/typography.stories.ts": [

@@ -1,6 +1,6 @@
 @import "./assets/scss/styles.scss";
 
-:root {
+.hotpoint {
   //  --color-primary-hex: #1FB5BE;
   @include defineColorHSL(--color-primary, 183, 72%, 43%);
   // color contrasts
@@ -8,4 +8,8 @@
   @include defineColorHSL(--color-primary-dark, 183, 72%, 29%);
   @include defineColorHSL(--color-primary-light, 183, 72%, 58%);
   @include defineColorHSL(--color-primary-lighter, 183, 72%, 70%);
+}
+
+:root {
+  @extend .hotpoint;
 }
